@@ -48,7 +48,6 @@ public class QuestionPassageReader extends CollectionReader_ImplBase {
     }
   }
   
-  @Override
   public void getNext(CAS aCAS) throws IOException, CollectionException {
     //Import the CAS as a JCAS
     JCas jcas;
@@ -75,7 +74,6 @@ public class QuestionPassageReader extends CollectionReader_ImplBase {
     }
   }
 
-  @Override
   public Progress[] getProgress() {
  // Here you set a Progress structure which corresponds to the current status of
     // the collection reader
@@ -83,12 +81,10 @@ public class QuestionPassageReader extends CollectionReader_ImplBase {
         new ProgressImpl(mCurrentIndex,mFiles.size(),Progress.ENTITIES)};
   }
 
-  @Override
   public boolean hasNext() throws IOException, CollectionException {
     return mCurrentIndex < mFiles.size(); //Check if there are any files left to be read
   }
   
-  @Override
   public void close() throws IOException {
   }
 }

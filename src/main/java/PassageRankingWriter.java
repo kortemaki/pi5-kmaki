@@ -35,7 +35,6 @@ public class PassageRankingWriter extends CasConsumer_ImplBase {
     }
   }
   
-  @Override
   public void processCas(CAS arg0) throws ResourceProcessException {
   //Import the CAS as a JCAS
     JCas jcas = null;

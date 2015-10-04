@@ -11,7 +11,6 @@ public class StatusCallbackListenerImpl implements StatusCallbackListener {
 
   private boolean isProcessing = true;
 
-  @Override
   public void entityProcessComplete(CAS arg0, EntityProcessStatus arg1) {
     if (arg1.isException()) {
       for (Exception e : arg1.getExceptions()) {
@@ -20,7 +19,6 @@ public class StatusCallbackListenerImpl implements StatusCallbackListener {
     }
   }
 
-  @Override
   public void aborted() {
     synchronized (this) {
       if (isProcessing) {
@@ -30,12 +28,10 @@ public class StatusCallbackListenerImpl implements StatusCallbackListener {
     }
   }
 
-  @Override
   public void batchProcessComplete() {
     // Do nothing
   }
 
-  @Override
   public void collectionProcessComplete() {
     synchronized (this) {
       if (isProcessing) {
@@ -45,17 +41,14 @@ public class StatusCallbackListenerImpl implements StatusCallbackListener {
     }
   }
 
-  @Override
   public void initializationComplete() {
     // Do nothing
   }
 
-  @Override
   public void paused() {
     // Do nothing
   }
 
-  @Override
   public void resumed() {
     // Do nothing
   }
