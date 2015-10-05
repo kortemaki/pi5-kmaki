@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Annotates performance of the system on a single test element.
- * Updated by JCasGen Mon Oct 05 11:02:38 EDT 2015
+ * Updated by JCasGen Mon Oct 05 14:53:37 EDT 2015
  * @generated */
 public class Performance_Type extends ComponentAnnotation_Type {
   /** @generated 
@@ -118,26 +118,26 @@ public class Performance_Type extends ComponentAnnotation_Type {
   
  
   /** @generated */
-  final Feature casFeat_mr;
+  final Feature casFeat_rr;
   /** @generated */
-  final int     casFeatCode_mr;
+  final int     casFeatCode_rr;
   /** @generated
    * @param addr low level Feature Structure reference
    * @return the feature value 
    */ 
-  public float getMr(int addr) {
-        if (featOkTst && casFeat_mr == null)
-      jcas.throwFeatMissing("mr", "type.Performance");
-    return ll_cas.ll_getFloatValue(addr, casFeatCode_mr);
+  public float getRr(int addr) {
+        if (featOkTst && casFeat_rr == null)
+      jcas.throwFeatMissing("rr", "type.Performance");
+    return ll_cas.ll_getFloatValue(addr, casFeatCode_rr);
   }
   /** @generated
    * @param addr low level Feature Structure reference
    * @param v value to set 
    */    
-  public void setMr(int addr, float v) {
-        if (featOkTst && casFeat_mr == null)
-      jcas.throwFeatMissing("mr", "type.Performance");
-    ll_cas.ll_setFloatValue(addr, casFeatCode_mr, v);}
+  public void setRr(int addr, float v) {
+        if (featOkTst && casFeat_rr == null)
+      jcas.throwFeatMissing("rr", "type.Performance");
+    ll_cas.ll_setFloatValue(addr, casFeatCode_rr, v);}
     
   
  
@@ -189,8 +189,8 @@ public class Performance_Type extends ComponentAnnotation_Type {
     casFeatCode_pAt5  = (null == casFeat_pAt5) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_pAt5).getCode();
 
  
-    casFeat_mr = jcas.getRequiredFeatureDE(casType, "mr", "uima.cas.Float", featOkTst);
-    casFeatCode_mr  = (null == casFeat_mr) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_mr).getCode();
+    casFeat_rr = jcas.getRequiredFeatureDE(casType, "rr", "uima.cas.Float", featOkTst);
+    casFeatCode_rr  = (null == casFeat_rr) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_rr).getCode();
 
  
     casFeat_ap = jcas.getRequiredFeatureDE(casType, "ap", "uima.cas.Float", featOkTst);

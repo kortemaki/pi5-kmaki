@@ -236,8 +236,8 @@ You need to implement the types requried for your ranking model.</description>
           <rangeTypeName>uima.cas.Float</rangeTypeName>
         </featureDescription>
         <featureDescription>
-          <name>mr</name>
-          <description>MR for this Test Element</description>
+          <name>rr</name>
+          <description>Reciprocal rank for this Test Element</description>
           <rangeTypeName>uima.cas.Float</rangeTypeName>
         </featureDescription>
         <featureDescription>

@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** An annotation which modifies a span (e.g. a tokenization).
- * Updated by JCasGen Mon Oct 05 11:02:38 EDT 2015
+ * Updated by JCasGen Mon Oct 05 14:53:37 EDT 2015
  * @generated */
 public class SpanModification_Type extends Span_Type {
   /** @generated 

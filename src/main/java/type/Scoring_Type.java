@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Annotation holding the ranking scores for each of the passages associated with this Test Element.
- * Updated by JCasGen Mon Oct 05 11:02:38 EDT 2015
+ * Updated by JCasGen Mon Oct 05 14:53:37 EDT 2015
  * @generated */
 public class Scoring_Type extends SpanModification_Type {
   /** @generated 

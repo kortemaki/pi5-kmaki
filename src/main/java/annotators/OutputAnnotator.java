@@ -46,6 +46,8 @@ import org.apache.uima.resource.ResourceInitializationException;
 
 import type.OutputAnnotation;
 import type.Passage;
+import type.Performance;
+import type.Question;
 import type.ScoredSpan;
 import type.Scoring;
 import type.Span;
@@ -73,40 +75,27 @@ public class OutputAnnotator extends CasAnnotator_ImplBase {
 		}
 		
 		// Get the Scoring Annotations for each Test Element in the document
-		FSIndex<Scoring> scoreIndex = (FSIndex) (jcas.getAnnotationIndex(Scoring.type));
+		FSIndex<Performance> performanceIndex = (FSIndex) (jcas.getAnnotationIndex(Performance.type));
 
 		// Iterate over them in sequence
-		for(Scoring annot : scoreIndex)
+		for(Performance performance : performanceIndex)
 		{				
-			//////////////////////
-			// Handle the passages
-			// Iterate over the passages for this Test Element and compute the scores
-			FSList passages = annot.getScores();
-			List<String> lines = new ArrayList<String>();
-			while(!(passages instanceof EmptyFSList))
-			{
-				ScoredSpan scored = (ScoredSpan) ((NonEmptyFSList) passages).getHead();
-				Double score = scored.getScore();
-				if(scored.getOrig() instanceof Passage)
-				{
-					System.out.println(scored.getText());
-					Passage pass = (Passage) scored.getOrig();
-				}
-				Passage passage = (Passage) scored.getOrig();
-				Span span = passage.getPassage();// Cannot cast as Passage
-				String line = passage.getQuestion().getId() + " " + passage.getSourceDocId() + " " + 
-								String.format("%.3f",score) + " " + span.getText();
-				passages = ((NonEmptyFSList) passages).getTail();
-				lines.add(line);
-			}
+	        Question question = performance.getTestElement().getQuestion();
+	          
+	        String text = String.format("%s,%.3f,%.3f,%.3f,%.3f\n",
+	                question.getId(), 
+	                performance.getPAt1(),
+	                performance.getPAt5(),
+	                performance.getRr(),
+	                performance.getAp());
 			
-			String text = String.join("\n", lines);
+			
 			OutputAnnotation output = new OutputAnnotation(jcas);
 			output.setComponentId(this.getClass().getName());
-			output.setBegin(annot.getBegin());
-			output.setEnd(annot.getEnd());
-			output.setOrig(annot.getOrig());
-			output.setText(((TestElementAnnotation) annot.getOrig()).getQuestion().getId());
+			output.setBegin(performance.getBegin());
+			output.setEnd(performance.getEnd());
+			output.setOrig(performance.getTestElement());
+			output.setText((performance.getTestElement()).getQuestion().getId());
 			output.setOutput(text);
 			output.addToIndexes();
 		}

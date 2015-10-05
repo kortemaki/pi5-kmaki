@@ -10,7 +10,7 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** A Span annotation holding a tokenization of fixed length n.
- * Updated by JCasGen Mon Oct 05 11:02:38 EDT 2015
+ * Updated by JCasGen Mon Oct 05 14:53:37 EDT 2015
  * XML source: /media/maki/OS/Users/Keith/Documents/CMU/Coursework/11791/PI5/pi5-kmaki/src/main/resources/descriptors/typeSystem.xml
  * @generated */
 public class Ngram extends TokenizedSpan {

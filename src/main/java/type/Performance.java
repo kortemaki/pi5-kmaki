@@ -10,7 +10,7 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** Annotates performance of the system on a single test element.
- * Updated by JCasGen Mon Oct 05 11:02:38 EDT 2015
+ * Updated by JCasGen Mon Oct 05 14:53:37 EDT 2015
  * XML source: /media/maki/OS/Users/Keith/Documents/CMU/Coursework/11791/PI5/pi5-kmaki/src/main/resources/descriptors/typeSystem.xml
  * @generated */
 public class Performance extends ComponentAnnotation {
@@ -142,25 +142,25 @@ public class Performance extends ComponentAnnotation {
    
     
   //*--------------*
-  //* Feature: mr
+  //* Feature: rr
 
-  /** getter for mr - gets MR for this Test Element
+  /** getter for rr - gets Reciprocal rank for this Test Element
    * @generated
    * @return value of the feature 
    */
-  public float getMr() {
-    if (Performance_Type.featOkTst && ((Performance_Type)jcasType).casFeat_mr == null)
-      jcasType.jcas.throwFeatMissing("mr", "type.Performance");
-    return jcasType.ll_cas.ll_getFloatValue(addr, ((Performance_Type)jcasType).casFeatCode_mr);}
+  public float getRr() {
+    if (Performance_Type.featOkTst && ((Performance_Type)jcasType).casFeat_rr == null)
+      jcasType.jcas.throwFeatMissing("rr", "type.Performance");
+    return jcasType.ll_cas.ll_getFloatValue(addr, ((Performance_Type)jcasType).casFeatCode_rr);}
     
-  /** setter for mr - sets MR for this Test Element 
+  /** setter for rr - sets Reciprocal rank for this Test Element 
    * @generated
    * @param v value to set into the feature 
    */
-  public void setMr(float v) {
-    if (Performance_Type.featOkTst && ((Performance_Type)jcasType).casFeat_mr == null)
-      jcasType.jcas.throwFeatMissing("mr", "type.Performance");
-    jcasType.ll_cas.ll_setFloatValue(addr, ((Performance_Type)jcasType).casFeatCode_mr, v);}    
+  public void setRr(float v) {
+    if (Performance_Type.featOkTst && ((Performance_Type)jcasType).casFeat_rr == null)
+      jcasType.jcas.throwFeatMissing("rr", "type.Performance");
+    jcasType.ll_cas.ll_setFloatValue(addr, ((Performance_Type)jcasType).casFeatCode_rr, v);}    
    
     
   //*--------------*
