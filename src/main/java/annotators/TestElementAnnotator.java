@@ -21,7 +21,9 @@ import org.apache.uima.jcas.cas.FSArray;
 import org.apache.uima.jcas.cas.FSList;
 import org.apache.uima.jcas.cas.NonEmptyFSList;
 
+import type.Question;
 import type.Span;
+import type.TestElementAnnotation;
 
 /**
  * A simple segment annotator for PI4.
@@ -81,23 +83,21 @@ public class TestElementAnnotator extends CasAnnotator_ImplBase
 		////////////////////////////////
 		//Annotate test element metadata		
 		String qnum = question.split(WHITESPACE)[0];
-		type.Question te = new type.Question(jcas); // the test element
+		TestElementAnnotation te = new type.TestElementAnnotation(jcas); // the test element
 		te.setBegin(0);
 		te.setEnd(text.length());
-		te.setId(qnum);
 		te.setText("QUESTION " + qnum + " + PASSAGES");
 		te.setComponentId(this.getClass().getName());
-
+		
 		////////////////////////////
 		//Annotate the question span
 		int index = question.length();
-		Span q = new Span(jcas);
+		Question q = new Question(jcas);
+		q.setId(qnum);
 		q.setBegin(qnum.length() + QUESTION_MARKER.length() + 2);
 		q.setEnd(index);
 		q.setText(question.substring(q.getBegin()));
 		q.setComponentId(this.getClass().getName());
-		q.addToIndexes();
-		te.setQuestion(q);
 		
 		///////////////////////
 		//Annotate the passages
@@ -131,7 +131,7 @@ public class TestElementAnnotator extends CasAnnotator_ImplBase
 			{
 				tePassage.setLabel(false);
 			}
-			tePassage.setQuestion(te);
+			tePassage.setQuestion(q);
 			tePassage.setComponentId(this.getClass().getName());
 			tePassage.addToIndexes();
 			NonEmptyFSList tepass = new NonEmptyFSList(jcas);
@@ -139,7 +139,9 @@ public class TestElementAnnotator extends CasAnnotator_ImplBase
 			tepass.setTail(tePassages);
 			tePassages = tepass;
 		}
-		te.setPassages(tePassages);
+		q.setPassages(tePassages);
+		q.addToIndexes();
+		te.setQuestion(q);
 		
 		te.addToIndexes();
 	}

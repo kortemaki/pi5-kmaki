@@ -34,11 +34,6 @@ You need to implement the types requried for your ranking model.</description>
           <rangeTypeName>uima.cas.FSList</rangeTypeName>
           <elementType>type.Passage</elementType>
         </featureDescription>
-      <featureDescription>
-          <name>question</name>
-          <description>The Span corresponding to the text of the question annotated by this annotation.</description>
-          <rangeTypeName>type.Span</rangeTypeName>
-        </featureDescription>
       </features>
     </typeDescription>
     <typeDescription>

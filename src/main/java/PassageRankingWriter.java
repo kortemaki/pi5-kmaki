@@ -24,6 +24,9 @@ public class PassageRankingWriter extends CasConsumer_ImplBase {
   final String PARAM_OUTPUTDIR = "OutputDir";
   final String OUTPUT_FILENAME = "RankingMetrics.csv";
   File mOutputDir;
+  File outputFile;
+  PrintWriter writer;
+  
   
   @Override
   public void initialize() throws ResourceInitializationException {
@@ -32,30 +35,31 @@ public class PassageRankingWriter extends CasConsumer_ImplBase {
       mOutputDir = new File(mOutputDirStr);
       if (!mOutputDir.exists()) {
         mOutputDir.mkdirs();
-    }
+      }
+      
+      try {
+          outputFile = new File(Paths.get(mOutputDir.getAbsolutePath(), 
+                                    OUTPUT_FILENAME).toString());
+          outputFile.getParentFile().mkdirs();
+          writer = new PrintWriter(outputFile);
+        } catch (FileNotFoundException e) {
+          System.out.printf("Output file could not be written: %s\n", 
+                  Paths.get(mOutputDir.getAbsolutePath(), 
+                            OUTPUT_FILENAME).toString());
+          return;
+        }
+        
+        writer.println("question_id,p_at_1,p_at_5,rr,ap");
+      
     }
   }
   
   public void processCas(CAS arg0) throws ResourceProcessException {
   //Import the CAS as a JCAS
     JCas jcas = null;
-    File outputFile = null;
-    PrintWriter writer = null;
     try {
       jcas = arg0.getJCas();
-      try {
-        outputFile = new File(Paths.get(mOutputDir.getAbsolutePath(), 
-                                  OUTPUT_FILENAME).toString());
-        outputFile.getParentFile().mkdirs();
-        writer = new PrintWriter(outputFile);
-      } catch (FileNotFoundException e) {
-        System.out.printf("Output file could not be written: %s\n", 
-                Paths.get(mOutputDir.getAbsolutePath(), 
-                          OUTPUT_FILENAME).toString());
-        return;
-      }
-      
-      writer.println("question_id,p_at_1,p_at_5,rr,ap");
+
       // Retrieve all the questions for printout
       //TODO: Sort the question in ascending order according to their ID (???)
       FSIterator it = jcas.getAnnotationIndex(Performance.type).iterator();
@@ -64,12 +68,14 @@ public class PassageRankingWriter extends CasConsumer_ImplBase {
         Performance performance = (Performance)it.next();
         
         Question question = performance.getTestElement().getQuestion();
-          
+        
+        System.out.println("Processing performance output for question "+ question.getId());
+        
         writer.printf("%s,%.3f,%.3f,%.3f,%.3f\n",
                 question.getId(), 
                 performance.getPAt1(),
                 performance.getPAt5(),
-                performance.getMr(),
+                performance.getRr(),
                 performance.getAp());
       
       }
@@ -80,11 +86,13 @@ public class PassageRankingWriter extends CasConsumer_ImplBase {
       } catch (CollectionException e1) {
         e1.printStackTrace();
       }
-    } finally {
-      if(writer != null)
-        writer.close();
     }
-    
   }
-
+  
+  public void destroy()
+  {
+	  if(this.writer != null)
+	      writer.close();
+  }
+  
 }

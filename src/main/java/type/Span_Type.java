@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Component Annotation with a text field to identify the relevant text of the annotated span.
- * Updated by JCasGen Mon Oct 05 14:53:37 EDT 2015
+ * Updated by JCasGen Mon Oct 05 15:32:22 EDT 2015
  * @generated */
 public class Span_Type extends ComponentAnnotation_Type {
   /** @generated 

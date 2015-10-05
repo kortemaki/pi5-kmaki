@@ -4,26 +4,26 @@
   <primitive>false</primitive>  
   <delegateAnalysisEngineSpecifiers>
     <delegateAnalysisEngine key="TestElementAnnotator">
-      <import name="descriptors.annotators.TestElementAnnotator"/>
+      <import name=".media.maki.OS.Users.Keith.Documents.CMU.Coursework.11791.PI5.pi5-kmaki.src.main.resources.descriptors.annotators.TestElementAnnotator"/>
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="TokenizationAnnotator">
-      <import name="descriptors.annotators.TokenizationAnnotator"/>
+      <import name=".media.maki.OS.Users.Keith.Documents.CMU.Coursework.11791.PI5.pi5-kmaki.target.classes.descriptors.annotators.TokenizationAnnotator"/>
     
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="NgramAnnotator">
-      <import name="descriptors.annotators.NgramAnnotator"/>
+      <import name=".media.maki.OS.Users.Keith.Documents.CMU.Coursework.11791.PI5.pi5-kmaki.src.main.resources.descriptors.annotators.NgramAnnotator"/>
     
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="ScoreAnnotator">
-      <import name="descriptors.annotators.ScoreAnnotator"/>
+      <import name=".media.maki.OS.Users.Keith.Documents.CMU.Coursework.11791.PI5.pi5-kmaki.src.main.resources.descriptors.annotators.ScoreAnnotator"/>
     
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="PerformanceAnnotator">
-      <import name="descriptors.annotators.PerformanceAnnotator"/>
+      <import name=".media.maki.OS.Users.Keith.Documents.CMU.Coursework.11791.PI5.pi5-kmaki.src.main.resources.descriptors.annotators.PerformanceAnnotator"/>
     
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="OutputAnnotator">
-      <import name="descriptors.annotators.OutputAnnotator"/>
+      <import name=".media.maki.OS.Users.Keith.Documents.CMU.Coursework.11791.PI5.pi5-kmaki.src.main.resources.descriptors.annotators.OutputAnnotator"/>
     
     </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>

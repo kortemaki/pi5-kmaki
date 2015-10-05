@@ -38,6 +38,7 @@ import org.apache.uima.jcas.cas.NonEmptyFSList;
 import type.Passage;
 import type.Question;
 import type.Span;
+import type.TestElementAnnotation;
 import type.TokenAnnotation;
 import type.TokenizedSpan;
 
@@ -61,16 +62,16 @@ public class TokenizationAnnotator extends CasAnnotator_ImplBase {
 		}
 
 		// Get the Test Element Annotations for the document
-		FSIndex<Question> teIndex = (FSIndex) (jcas).getAnnotationIndex(Question.type);
+		FSIndex<TestElementAnnotation> teIndex = (FSIndex) (jcas).getAnnotationIndex(TestElementAnnotation.type);
 
 		// Iterate over them in sequence
-		for(Question te : teIndex)
+		for(TestElementAnnotation te : teIndex)
 		{
 			// Create the TokenAnnotation for this test element
 			TokenAnnotation annot = new TokenAnnotation(jcas); 
-			Span question = te.getQuestion();
+			Question question = te.getQuestion();
 			annot.setQuestionTokens(this.tokenize(question,jcas));
-			FSList passages = te.getPassages();
+			FSList passages = question.getPassages();
 			FSList passtoks = new EmptyFSList(jcas);
 			while(!(passages instanceof EmptyFSList))
 			{

@@ -41,23 +41,54 @@ public class PerformanceAnnotator extends CasAnnotator_ImplBase  {
 
 		for(Scoring score : teIndex)
 		{
-			Question question = (Question) score.getOrig();
+			Question question = ((TestElementAnnotation) score.getOrig()).getQuestion();
 			Performance performance = new Performance(jcas);
 			performance.setTestElement((TestElementAnnotation) score.getOrig());
 			performance.setBegin(question.getBegin());
 			performance.setEnd(question.getEnd());
-			performance.setPAt1(precisionAtN(score, 1));
-			performance.setPAt5(precisionAtN(score, 5));
-			performance.setRr(0);
-			performance.setAp(0);
+			
+			List<Boolean> correct = getCorrection(score);
+			
+			performance.setPAt1(precisionAtN(correct, 1));
+			performance.setPAt5(precisionAtN(correct, 5));
+			performance.setRr(reciprocalRank(correct));
+			performance.setAp(averagePrecision(correct));
 			performance.setComponentId(this.getClass().getName());
 			performance.addToIndexes();
 		}		
 	}
 	
+	private static float reciprocalRank(List<Boolean> scores)
+	{
+		return 0;
+		/*int index = 0;
+		while(!scores.get(index) && index < scores.size())
+		{
+			System.out.print(scores.get(index) + " ");
+			index++;
+		}
+		System.out.println("");
+		return ((float)1.0)/index;
+		*/
+	}
 	
+	private static float averagePrecision(List<Boolean> scores)
+	{
+		float total = 0;
+		for(int n=0; n < scores.size(); n++)
+		{
+			total += precisionAtN(scores,n);
+		}
+		System.out.println(scores.size());
+		return ((float) total)/((float) scores.size());
+	}
 	
-	public float precisionAtN(Scoring scoring, int n)
+	private static float precisionAtN(List<Boolean> scores, int n)
+	{		
+		return countFirstN(scores, n)/n;
+	}
+	
+	private static List<Boolean> getCorrection(Scoring scoring)
 	{
 		FSList nextScore = scoring.getScores();
 		List<Boolean> labels = new ArrayList<Boolean>();
@@ -71,8 +102,8 @@ public class PerformanceAnnotator extends CasAnnotator_ImplBase  {
 			scores.add(score);
 			nextScore = ((NonEmptyFSList) nextScore).getTail();
 		}
-		concurrentSort(scores,scores,labels);
-		return sumFirstNIfLabel(scores, labels, n)/n;
+		concurrentSort(scores,labels);
+		return labels;
 	}
 	
 	/**
@@ -83,13 +114,13 @@ public class PerformanceAnnotator extends CasAnnotator_ImplBase  {
 	 * @param n - The maximum number of values to consider
 	 * @return The sum of the first n values, filtered by True labels
 	 */
-	private static float sumFirstNIfLabel(List<Double> values, List<Boolean> labels, int n)
+	private static float countFirstN(List<Boolean> values, int n)
 	{
 		float sum = 0;
-		for(int i=0; i<values.size() && i < labels.size() && i<n; i++)
+		for(int i=0; i<values.size() && i<n; i++)
 		{
-			if(labels.get(i))
-				sum += values.get(i);
+			if(values.get(i))
+				sum++;
 		}
 		return sum;
 	}

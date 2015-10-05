@@ -10,7 +10,7 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** The finished output for the annotated test element.
- * Updated by JCasGen Mon Oct 05 14:53:37 EDT 2015
+ * Updated by JCasGen Mon Oct 05 15:32:22 EDT 2015
  * XML source: /media/maki/OS/Users/Keith/Documents/CMU/Coursework/11791/PI5/pi5-kmaki/src/main/resources/descriptors/typeSystem.xml
  * @generated */
 public class OutputAnnotation extends SpanModification {

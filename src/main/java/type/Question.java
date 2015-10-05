@@ -11,7 +11,7 @@ import org.apache.uima.jcas.cas.FSList;
 
 
 /** Stores the information about a question.
- * Updated by JCasGen Mon Oct 05 14:53:37 EDT 2015
+ * Updated by JCasGen Mon Oct 05 15:32:22 EDT 2015
  * XML source: /media/maki/OS/Users/Keith/Documents/CMU/Coursework/11791/PI5/pi5-kmaki/src/main/resources/descriptors/typeSystem.xml
  * @generated */
 public class Question extends Span {
@@ -118,28 +118,6 @@ public class Question extends Span {
     if (Question_Type.featOkTst && ((Question_Type)jcasType).casFeat_passages == null)
       jcasType.jcas.throwFeatMissing("passages", "type.Question");
     jcasType.ll_cas.ll_setRefValue(addr, ((Question_Type)jcasType).casFeatCode_passages, jcasType.ll_cas.ll_getFSRef(v));}    
-   
-    
-  //*--------------*
-  //* Feature: question
-
-  /** getter for question - gets The Span corresponding to the text of the question annotated by this annotation.
-   * @generated
-   * @return value of the feature 
-   */
-  public Span getQuestion() {
-    if (Question_Type.featOkTst && ((Question_Type)jcasType).casFeat_question == null)
-      jcasType.jcas.throwFeatMissing("question", "type.Question");
-    return (Span)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Question_Type)jcasType).casFeatCode_question)));}
-    
-  /** setter for question - sets The Span corresponding to the text of the question annotated by this annotation. 
-   * @generated
-   * @param v value to set into the feature 
-   */
-  public void setQuestion(Span v) {
-    if (Question_Type.featOkTst && ((Question_Type)jcasType).casFeat_question == null)
-      jcasType.jcas.throwFeatMissing("question", "type.Question");
-    jcasType.ll_cas.ll_setRefValue(addr, ((Question_Type)jcasType).casFeatCode_question, jcasType.ll_cas.ll_getFSRef(v));}    
   }
 
     

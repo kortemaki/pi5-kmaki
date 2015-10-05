@@ -11,7 +11,7 @@
     <configurationParameterSettings/>
     <typeSystemDescription>
       <imports>
-        <import location="/media/maki/OS/Users/Keith/Documents/CMU/Coursework/11791/PI4/pi4-kmaki/src/main/resources/descriptors/typeSystem.xml"/>
+        <import location="/media/maki/OS/Users/Keith/Documents/CMU/Coursework/11791/PI5/pi5-kmaki/src/main/resources/descriptors/typeSystem.xml"/>
       </imports>
     </typeSystemDescription>
     <typePriorities/>
