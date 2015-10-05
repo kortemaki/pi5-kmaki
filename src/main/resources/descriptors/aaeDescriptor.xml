@@ -2,6 +2,31 @@
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
   <primitive>false</primitive>  
+  <delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="TestElementAnnotator">
+      <import name="descriptors.annotators.TestElementAnnotator"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="TokenizationAnnotator">
+      <import name="descriptors.annotators.TokenizationAnnotator"/>
+    
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="NgramAnnotator">
+      <import name="descriptors.annotators.NgramAnnotator"/>
+    
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="ScoreAnnotator">
+      <import name="descriptors.annotators.ScoreAnnotator"/>
+    
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="PerformanceAnnotator">
+      <import name="descriptors.annotators.PerformanceAnnotator"/>
+    
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="OutputAnnotator">
+      <import name="descriptors.annotators.OutputAnnotator"/>
+    
+    </delegateAnalysisEngine>
+  </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>aaeDescriptor</name>
     <description>This is the descriptor for the pi5-kmaki Aggerate Analysis Engine.</description>
@@ -11,15 +36,20 @@
     <configurationParameterSettings/>
     <flowConstraints>
       <fixedFlow>
-        </fixedFlow>
+        <node>TestElementAnnotator</node>
+        <node>TokenizationAnnotator</node>
+        <node>NgramAnnotator</node>
+        <node>ScoreAnnotator</node>
+        <node>PerformanceAnnotator</node>
+        <node>OutputAnnotator</node>
+      </fixedFlow>
     </flowConstraints>
     <typePriorities/>
     <fsIndexCollection/>
     <capabilities>
       <capability>
         <inputs/>
-        <outputs>
-          </outputs>
+        <outputs/>
         <languagesSupported/>
       </capability>
     </capabilities>
