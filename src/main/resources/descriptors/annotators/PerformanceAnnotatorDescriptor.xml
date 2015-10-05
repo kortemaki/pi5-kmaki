@@ -3,7 +3,7 @@
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
   <primitive>true</primitive>  <annotatorImplementationName>annotators.PerformanceAnnotator</annotatorImplementationName>
   <analysisEngineMetaData>
-    <name>PrecisionAtNAnnotatorDescriptor</name>
+    <name>PerformanceAnnotator</name>
     <description/>
     <version>1.0</version>
     <vendor/>

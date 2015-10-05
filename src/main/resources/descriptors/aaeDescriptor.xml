@@ -9,20 +9,20 @@
     <delegateAnalysisEngine key="TokenizationAnnotator">
       <import name="descriptors.annotators.TokenizationAnnotator"/>
     </delegateAnalysisEngine>
-  <delegateAnalysisEngine key="NgramAnnotator">
-      <import name="descriptors.annotators.NgramAnnotator"/>
-    
-    </delegateAnalysisEngine>
-    <delegateAnalysisEngine key="ScoreAnnotator">
+  <delegateAnalysisEngine key="ScoreAnnotator">
       <import name="descriptors.annotators.ScoreAnnotator"/>
     
     </delegateAnalysisEngine>
-    <delegateAnalysisEngine key="PrecisionAtNAnnotatorDescriptor">
-      <import name="descriptors.annotators.PrecisionAtNAnnotatorDescriptor"/>
+    <delegateAnalysisEngine key="PerformanceAnnotatorDescriptor">
+      <import name="descriptors.annotators.PerformanceAnnotatorDescriptor"/>
     
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="outputAnnotator">
       <import name="descriptors.annotators.outputAnnotator"/>
+    
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="NgramAnnotatorDescriptor">
+      <import name="descriptors.annotators.NgramAnnotatorDescriptor"/>
     
     </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
@@ -37,10 +37,10 @@
       <fixedFlow>
         <node>TestElementAnnotator</node>
         <node>TokenizationAnnotator</node>
-      <node>NgramAnnotator</node>
-        <node>ScoreAnnotator</node>
-        <node>PrecisionAtNAnnotatorDescriptor</node>
+      <node>ScoreAnnotator</node>
+        <node>PerformanceAnnotatorDescriptor</node>
         <node>outputAnnotator</node>
+        <node>NgramAnnotatorDescriptor</node>
       </fixedFlow>
     </flowConstraints>
     <typePriorities/>
