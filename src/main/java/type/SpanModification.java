@@ -10,7 +10,7 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** An annotation which modifies a span (e.g. a tokenization).
- * Updated by JCasGen Mon Oct 05 10:45:47 EDT 2015
+ * Updated by JCasGen Mon Oct 05 11:02:38 EDT 2015
  * XML source: /media/maki/OS/Users/Keith/Documents/CMU/Coursework/11791/PI5/pi5-kmaki/src/main/resources/descriptors/typeSystem.xml
  * @generated */
 public class SpanModification extends Span {
@@ -76,47 +76,25 @@ public class SpanModification extends Span {
  
     
   //*--------------*
-  //* Feature: span
+  //* Feature: orig
 
-  /** getter for span - gets The original span annotation for this downstream annotation.
+  /** getter for orig - gets The original span annotation for this downstream annotation.
    * @generated
    * @return value of the feature 
    */
-  public Span getSpan() {
-    if (SpanModification_Type.featOkTst && ((SpanModification_Type)jcasType).casFeat_span == null)
-      jcasType.jcas.throwFeatMissing("span", "type.SpanModification");
-    return (Span)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((SpanModification_Type)jcasType).casFeatCode_span)));}
+  public Span getOrig() {
+    if (SpanModification_Type.featOkTst && ((SpanModification_Type)jcasType).casFeat_orig == null)
+      jcasType.jcas.throwFeatMissing("orig", "type.SpanModification");
+    return (Span)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((SpanModification_Type)jcasType).casFeatCode_orig)));}
     
-  /** setter for span - sets The original span annotation for this downstream annotation. 
+  /** setter for orig - sets The original span annotation for this downstream annotation. 
    * @generated
    * @param v value to set into the feature 
    */
-  public void setSpan(Span v) {
-    if (SpanModification_Type.featOkTst && ((SpanModification_Type)jcasType).casFeat_span == null)
-      jcasType.jcas.throwFeatMissing("span", "type.SpanModification");
-    jcasType.ll_cas.ll_setRefValue(addr, ((SpanModification_Type)jcasType).casFeatCode_span, jcasType.ll_cas.ll_getFSRef(v));}    
-   
-    
-  //*--------------*
-  //* Feature: passage
-
-  /** getter for passage - gets Hack to get the span to cast to a passage in the case that it's supposed to.
-   * @generated
-   * @return value of the feature 
-   */
-  public Passage getPassage() {
-    if (SpanModification_Type.featOkTst && ((SpanModification_Type)jcasType).casFeat_passage == null)
-      jcasType.jcas.throwFeatMissing("passage", "type.SpanModification");
-    return (Passage)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((SpanModification_Type)jcasType).casFeatCode_passage)));}
-    
-  /** setter for passage - sets Hack to get the span to cast to a passage in the case that it's supposed to. 
-   * @generated
-   * @param v value to set into the feature 
-   */
-  public void setPassage(Passage v) {
-    if (SpanModification_Type.featOkTst && ((SpanModification_Type)jcasType).casFeat_passage == null)
-      jcasType.jcas.throwFeatMissing("passage", "type.SpanModification");
-    jcasType.ll_cas.ll_setRefValue(addr, ((SpanModification_Type)jcasType).casFeatCode_passage, jcasType.ll_cas.ll_getFSRef(v));}    
+  public void setOrig(Span v) {
+    if (SpanModification_Type.featOkTst && ((SpanModification_Type)jcasType).casFeat_orig == null)
+      jcasType.jcas.throwFeatMissing("orig", "type.SpanModification");
+    jcasType.ll_cas.ll_setRefValue(addr, ((SpanModification_Type)jcasType).casFeatCode_orig, jcasType.ll_cas.ll_getFSRef(v));}    
   }
 
     

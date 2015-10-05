@@ -97,8 +97,7 @@ public class ScoreAnnotator extends CasAnnotator_ImplBase {
 				score.setBegin(passageNgrams.getBegin());
 				score.setEnd(passageNgrams.getEnd());
 				score.setText(passageNgrams.getText());
-				score.setSpan(passageNgrams.getSpan());
-				score.setPassage(passageNgrams.getPassage());
+				score.setOrig(passageNgrams.getOrig());
 				score.setComponentId(this.getClass().getName());
 				
 				score.setScore(this.score(questionNgrams,passageNgrams));
@@ -111,7 +110,7 @@ public class ScoreAnnotator extends CasAnnotator_ImplBase {
 			output.setScores(scores);
 			output.setBegin(ngramAnnot.getBegin());
 			output.setEnd(ngramAnnot.getEnd());
-			output.setQuestion(ngramAnnot.getQuestion());
+			output.setOrig(ngramAnnot.getOrig());
 			output.setComponentId(this.getClass().getName());	
 			output.addToIndexes();
 		}

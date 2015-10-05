@@ -13,9 +13,9 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Annotates ngrams for the relevant parts of a test element.
- * Updated by JCasGen Mon Oct 05 10:45:47 EDT 2015
+ * Updated by JCasGen Mon Oct 05 11:02:38 EDT 2015
  * @generated */
-public class NgramAnnotation_Type extends TestElementAnnotation_Type {
+public class NgramAnnotation_Type extends SpanModification_Type {
   /** @generated 
    * @return the generator for this type
    */

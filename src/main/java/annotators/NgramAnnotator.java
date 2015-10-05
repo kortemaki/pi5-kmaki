@@ -101,7 +101,7 @@ public class NgramAnnotator extends CasAnnotator_ImplBase {
 				TokenizedSpan passage = (TokenizedSpan) ((NonEmptyFSList) passages).getHead();
 				NonEmptyFSList next = new NonEmptyFSList(jcas);
 				NgramSet ngrams = this.ngramize(passage,jcas);
-				ngrams.setPassage(passage.getPassage());
+				ngrams.setOrig(passage.getOrig());
 				next.setHead(ngrams);
 				next.setTail(passagesNgrams);				
 				passagesNgrams = next;
@@ -110,7 +110,7 @@ public class NgramAnnotator extends CasAnnotator_ImplBase {
 			annot.setPassageNgrams(passagesNgrams);
 			annot.setBegin(te.getBegin());
 			annot.setEnd(te.getEnd());
-			annot.setQuestion(te.getQuestion());
+			annot.setOrig(te.getOrig());
 			annot.setComponentId(NAME);
 			annot.addToIndexes();
 		}
@@ -133,7 +133,7 @@ public class NgramAnnotator extends CasAnnotator_ImplBase {
 		ngrams.setBegin(begin);
 		ngrams.setEnd(end);
 		ngrams.setText(tokens.getText());
-		ngrams.setSpan(tokens.getSpan());
+		ngrams.setOrig(tokens.getOrig());
 		ngrams.setComponentId(NAME);
 		
 		//Populate the ngram annotations

@@ -108,7 +108,7 @@ You need to implement the types requried for your ranking model.</description>
     <typeDescription>
       <name>type.TokenAnnotation</name>
       <description>Annotates a test element with tokenizations for the question and each of its passages.</description>
-      <supertypeName>type.TestElementAnnotation</supertypeName>
+      <supertypeName>type.SpanModification</supertypeName>
       <features>
         <featureDescription>
           <name>questionTokens</name>
@@ -151,7 +151,7 @@ You need to implement the types requried for your ranking model.</description>
     <typeDescription>
       <name>type.NgramAnnotation</name>
       <description>Annotates ngrams for the relevant parts of a test element.</description>
-      <supertypeName>type.TestElementAnnotation</supertypeName>
+      <supertypeName>type.SpanModification</supertypeName>
       <features>
         <featureDescription>
           <name>questionNgrams</name>
@@ -169,7 +169,7 @@ You need to implement the types requried for your ranking model.</description>
     <typeDescription>
       <name>type.Scoring</name>
       <description>Annotation holding the ranking scores for each of the passages associated with this Test Element.</description>
-      <supertypeName>type.TestElementAnnotation</supertypeName>
+      <supertypeName>type.SpanModification</supertypeName>
       <features>
         <featureDescription>
           <name>scores</name>
@@ -194,7 +194,7 @@ You need to implement the types requried for your ranking model.</description>
     <typeDescription>
       <name>type.OutputAnnotation</name>
       <description>The finished output for the annotated test element.</description>
-      <supertypeName>type.TestElementAnnotation</supertypeName>
+      <supertypeName>type.SpanModification</supertypeName>
       <features>
         <featureDescription>
           <name>output</name>
@@ -209,16 +209,11 @@ You need to implement the types requried for your ranking model.</description>
       <supertypeName>type.Span</supertypeName>
       <features>
         <featureDescription>
-          <name>span</name>
+          <name>orig</name>
           <description>The original span annotation for this downstream annotation.</description>
           <rangeTypeName>type.Span</rangeTypeName>
         </featureDescription>
-        <featureDescription>
-          <name>passage</name>
-          <description>Hack to get the span to cast to a passage in the case that it's supposed to.</description>
-          <rangeTypeName>type.Passage</rangeTypeName>
-        </featureDescription>
-      </features>
+        </features>
     </typeDescription>
   <typeDescription>
       <name>type.Performance</name>

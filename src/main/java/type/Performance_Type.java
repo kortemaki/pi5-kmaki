@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Annotates performance of the system on a single test element.
- * Updated by JCasGen Mon Oct 05 10:45:47 EDT 2015
+ * Updated by JCasGen Mon Oct 05 11:02:38 EDT 2015
  * @generated */
 public class Performance_Type extends ComponentAnnotation_Type {
   /** @generated 

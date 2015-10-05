@@ -49,6 +49,7 @@ import type.Passage;
 import type.ScoredSpan;
 import type.Scoring;
 import type.Span;
+import type.TestElementAnnotation;
 
 
 /**
@@ -86,12 +87,12 @@ public class OutputAnnotator extends CasAnnotator_ImplBase {
 			{
 				ScoredSpan scored = (ScoredSpan) ((NonEmptyFSList) passages).getHead();
 				Double score = scored.getScore();
-				if(scored.getSpan() instanceof Passage)
+				if(scored.getOrig() instanceof Passage)
 				{
 					System.out.println(scored.getText());
-					Passage pass = (Passage) scored.getSpan();
+					Passage pass = (Passage) scored.getOrig();
 				}
-				Passage passage = scored.getPassage();
+				Passage passage = (Passage) scored.getOrig();
 				Span span = passage.getPassage();// Cannot cast as Passage
 				String line = passage.getQuestion().getId() + " " + passage.getSourceDocId() + " " + 
 								String.format("%.3f",score) + " " + span.getText();
@@ -104,8 +105,8 @@ public class OutputAnnotator extends CasAnnotator_ImplBase {
 			output.setComponentId(this.getClass().getName());
 			output.setBegin(annot.getBegin());
 			output.setEnd(annot.getEnd());
-			output.setQuestion(annot.getQuestion());
-			output.setText(annot.getQuestion().getId());
+			output.setOrig(annot.getOrig());
+			output.setText(((TestElementAnnotation) annot.getOrig()).getQuestion().getId());
 			output.setOutput(text);
 			output.addToIndexes();
 		}

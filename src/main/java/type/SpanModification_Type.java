@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** An annotation which modifies a span (e.g. a tokenization).
- * Updated by JCasGen Mon Oct 05 10:45:47 EDT 2015
+ * Updated by JCasGen Mon Oct 05 11:02:38 EDT 2015
  * @generated */
 public class SpanModification_Type extends Span_Type {
   /** @generated 
@@ -46,50 +46,26 @@ public class SpanModification_Type extends Span_Type {
   public final static boolean featOkTst = JCasRegistry.getFeatOkTst("type.SpanModification");
  
   /** @generated */
-  final Feature casFeat_span;
+  final Feature casFeat_orig;
   /** @generated */
-  final int     casFeatCode_span;
+  final int     casFeatCode_orig;
   /** @generated
    * @param addr low level Feature Structure reference
    * @return the feature value 
    */ 
-  public int getSpan(int addr) {
-        if (featOkTst && casFeat_span == null)
-      jcas.throwFeatMissing("span", "type.SpanModification");
-    return ll_cas.ll_getRefValue(addr, casFeatCode_span);
+  public int getOrig(int addr) {
+        if (featOkTst && casFeat_orig == null)
+      jcas.throwFeatMissing("orig", "type.SpanModification");
+    return ll_cas.ll_getRefValue(addr, casFeatCode_orig);
   }
   /** @generated
    * @param addr low level Feature Structure reference
    * @param v value to set 
    */    
-  public void setSpan(int addr, int v) {
-        if (featOkTst && casFeat_span == null)
-      jcas.throwFeatMissing("span", "type.SpanModification");
-    ll_cas.ll_setRefValue(addr, casFeatCode_span, v);}
-    
-  
- 
-  /** @generated */
-  final Feature casFeat_passage;
-  /** @generated */
-  final int     casFeatCode_passage;
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @return the feature value 
-   */ 
-  public int getPassage(int addr) {
-        if (featOkTst && casFeat_passage == null)
-      jcas.throwFeatMissing("passage", "type.SpanModification");
-    return ll_cas.ll_getRefValue(addr, casFeatCode_passage);
-  }
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @param v value to set 
-   */    
-  public void setPassage(int addr, int v) {
-        if (featOkTst && casFeat_passage == null)
-      jcas.throwFeatMissing("passage", "type.SpanModification");
-    ll_cas.ll_setRefValue(addr, casFeatCode_passage, v);}
+  public void setOrig(int addr, int v) {
+        if (featOkTst && casFeat_orig == null)
+      jcas.throwFeatMissing("orig", "type.SpanModification");
+    ll_cas.ll_setRefValue(addr, casFeatCode_orig, v);}
     
   
 
@@ -105,12 +81,8 @@ public class SpanModification_Type extends Span_Type {
     casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
 
  
-    casFeat_span = jcas.getRequiredFeatureDE(casType, "span", "type.Span", featOkTst);
-    casFeatCode_span  = (null == casFeat_span) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_span).getCode();
-
- 
-    casFeat_passage = jcas.getRequiredFeatureDE(casType, "passage", "type.Passage", featOkTst);
-    casFeatCode_passage  = (null == casFeat_passage) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_passage).getCode();
+    casFeat_orig = jcas.getRequiredFeatureDE(casType, "orig", "type.Span", featOkTst);
+    casFeatCode_orig  = (null == casFeat_orig) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_orig).getCode();
 
   }
 }

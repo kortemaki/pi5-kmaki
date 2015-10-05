@@ -11,10 +11,10 @@ import org.apache.uima.jcas.cas.FSList;
 
 
 /** Annotation holding the ranking scores for each of the passages associated with this Test Element.
- * Updated by JCasGen Mon Oct 05 10:45:47 EDT 2015
+ * Updated by JCasGen Mon Oct 05 11:02:38 EDT 2015
  * XML source: /media/maki/OS/Users/Keith/Documents/CMU/Coursework/11791/PI5/pi5-kmaki/src/main/resources/descriptors/typeSystem.xml
  * @generated */
-public class Scoring extends TestElementAnnotation {
+public class Scoring extends SpanModification {
   /** @generated
    * @ordered 
    */

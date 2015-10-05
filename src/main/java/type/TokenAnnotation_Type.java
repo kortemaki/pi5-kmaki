@@ -13,9 +13,9 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Annotates a test element with tokenizations for the question and each of its passages.
- * Updated by JCasGen Mon Oct 05 10:45:47 EDT 2015
+ * Updated by JCasGen Mon Oct 05 11:02:38 EDT 2015
  * @generated */
-public class TokenAnnotation_Type extends TestElementAnnotation_Type {
+public class TokenAnnotation_Type extends SpanModification_Type {
   /** @generated 
    * @return the generator for this type
    */
