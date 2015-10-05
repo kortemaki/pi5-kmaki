@@ -6,10 +6,6 @@
     <delegateAnalysisEngine key="TestElementAnnotator">
       <import name=".media.maki.OS.Users.Keith.Documents.CMU.Coursework.11791.PI5.pi5-kmaki.src.main.resources.descriptors.annotators.TestElementAnnotator"/>
     </delegateAnalysisEngine>
-    <delegateAnalysisEngine key="TokenizationAnnotator">
-      <import name=".media.maki.OS.Users.Keith.Documents.CMU.Coursework.11791.PI5.pi5-kmaki.target.classes.descriptors.annotators.TokenizationAnnotator"/>
-    
-    </delegateAnalysisEngine>
     <delegateAnalysisEngine key="NgramAnnotator">
       <import name=".media.maki.OS.Users.Keith.Documents.CMU.Coursework.11791.PI5.pi5-kmaki.src.main.resources.descriptors.annotators.NgramAnnotator"/>
     
@@ -24,6 +20,10 @@
     </delegateAnalysisEngine>
     <delegateAnalysisEngine key="OutputAnnotator">
       <import name=".media.maki.OS.Users.Keith.Documents.CMU.Coursework.11791.PI5.pi5-kmaki.src.main.resources.descriptors.annotators.OutputAnnotator"/>
+    
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="TokenizationAnnotator">
+      <import name=".media.maki.OS.Users.Keith.Documents.CMU.Coursework.11791.PI5.pi5-kmaki.src.main.resources.descriptors.annotators.TokenizationAnnotator"/>
     
     </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>

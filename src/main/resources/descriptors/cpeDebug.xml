@@ -5,6 +5,14 @@
             <descriptor>
                 <import location="questionPassageReaderDescriptor.xml"/>
             </descriptor>
+            <configurationParameterSettings>
+        		<nameValuePair>
+        			<name>InputDir</name>
+        			<value>
+        				<string>/media/maki/OS/Users/Keith/Documents/CMU/Coursework/11791/PI5/pi5-kmaki/src/main/resources/inputData/</string>
+        			</value>
+            	</nameValuePair>
+            </configurationParameterSettings>
         </collectionIterator>
     </collectionReader>
     <casProcessors casPoolSize="3" processingUnitThreadCount="1">
