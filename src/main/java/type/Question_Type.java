@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Stores the information about a question.
- * Updated by JCasGen Mon Oct 05 10:08:06 EDT 2015
+ * Updated by JCasGen Mon Oct 05 10:45:47 EDT 2015
  * @generated */
 public class Question_Type extends Span_Type {
   /** @generated 

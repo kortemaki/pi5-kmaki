@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** A span with a score
- * Updated by JCasGen Mon Oct 05 10:08:06 EDT 2015
+ * Updated by JCasGen Mon Oct 05 10:45:47 EDT 2015
  * @generated */
 public class ScoredSpan_Type extends SpanModification_Type {
   /** @generated 

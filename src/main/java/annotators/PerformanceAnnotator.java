@@ -8,7 +8,7 @@ import org.apache.uima.jcas.JCas;
 import type.Performance;
 import type.Question;
 
-public class PrecisionAtNAnnotator extends JCasAnnotator_ImplBase  {
+public class PerformanceAnnotator extends JCasAnnotator_ImplBase  {
 	@Override
 	  public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		System.out.println(">> Question Annotator Processing");

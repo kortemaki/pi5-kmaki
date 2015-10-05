@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Holds a set of ngrams annotated within the annotated span.
- * Updated by JCasGen Mon Oct 05 10:08:06 EDT 2015
+ * Updated by JCasGen Mon Oct 05 10:45:47 EDT 2015
  * @generated */
 public class NgramSet_Type extends SpanModification_Type {
   /** @generated 
@@ -78,7 +78,7 @@ public class NgramSet_Type extends SpanModification_Type {
     if (lowLevelTypeChecks)
       return ll_cas.ll_getRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_ngrams), i, true);
     jcas.checkArrayBounds(ll_cas.ll_getRefValue(addr, casFeatCode_ngrams), i);
-	return ll_cas.ll_getRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_ngrams), i);
+  return ll_cas.ll_getRefArrayValue(ll_cas.ll_getRefValue(addr, casFeatCode_ngrams), i);
   }
    
   /** @generated

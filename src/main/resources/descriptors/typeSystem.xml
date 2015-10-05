@@ -220,5 +220,37 @@ You need to implement the types requried for your ranking model.</description>
         </featureDescription>
       </features>
     </typeDescription>
+  <typeDescription>
+      <name>type.Performance</name>
+      <description>Annotates performance of the system on a single test element.</description>
+      <supertypeName>type.ComponentAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>testElement</name>
+          <description>The test element annotated with this performance.</description>
+          <rangeTypeName>type.TestElementAnnotation</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>pAt1</name>
+          <description>Precision@1 for this Test Element.</description>
+          <rangeTypeName>uima.cas.Float</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>pAt5</name>
+          <description>Precision@5 for this Test Element.</description>
+          <rangeTypeName>uima.cas.Float</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>mr</name>
+          <description>MR for this Test Element</description>
+          <rangeTypeName>uima.cas.Float</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>ap</name>
+          <description>AP for this test element.</description>
+          <rangeTypeName>uima.cas.Float</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
   </types>
 </typeSystemDescription>

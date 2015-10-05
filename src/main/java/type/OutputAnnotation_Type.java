@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** The finished output for the annotated test element.
- * Updated by JCasGen Mon Oct 05 10:08:06 EDT 2015
+ * Updated by JCasGen Mon Oct 05 10:45:47 EDT 2015
  * @generated */
 public class OutputAnnotation_Type extends TestElementAnnotation_Type {
   /** @generated 

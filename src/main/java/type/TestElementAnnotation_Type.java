@@ -13,7 +13,7 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Annotation which builds on a test element.
- * Updated by JCasGen Mon Oct 05 10:08:06 EDT 2015
+ * Updated by JCasGen Mon Oct 05 10:45:47 EDT 2015
  * @generated */
 public class TestElementAnnotation_Type extends Span_Type {
   /** @generated 

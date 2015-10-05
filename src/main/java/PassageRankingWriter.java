@@ -14,6 +14,7 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceProcessException;
 
+import type.Performance;
 import type.Question;
 
 /**
@@ -56,18 +57,20 @@ public class PassageRankingWriter extends CasConsumer_ImplBase {
       
       writer.println("question_id,p_at_1,p_at_5,rr,ap");
       // Retrieve all the questions for printout
-      FSIterator it = jcas.getAnnotationIndex(Question.type).iterator();
+      //TODO: Sort the question in ascending order according to their ID (???)
+      FSIterator it = jcas.getAnnotationIndex(Performance.type).iterator();
+      
       while (it.hasNext()) {
-        Question question = (Question)it.next();
+        Performance performance = (Performance)it.next();
         
-        //TODO: Sort the question in ascending order according to their ID (???)
-        
+        Question question = performance.getTestElement().getQuestion();
+          
         writer.printf("%s,%.3f,%.3f,%.3f,%.3f\n",
                 question.getId(), 
-                question.getPerformance().getPAt1(),
-                question.getPerformance().getPAt5(),
-                question.getPerformance().getMmr(),
-                question.getPerformance().getMap());
+                performance.getPAt1(),
+                performance.getPAt5(),
+                performance.getMr(),
+                performance.getAp());
       
       }
       
