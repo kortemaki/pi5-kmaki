@@ -11,12 +11,11 @@ import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
 import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
-import org.apache.uima.jcas.tcas.Annotation_Type;
 
-/** A parent annotation which expects individual annotation types to inherit from.
+/** Annotation holding the ranking scores for each of the passages associated with this Test Element.
  * Updated by JCasGen Mon Oct 05 10:08:06 EDT 2015
  * @generated */
-public class ComponentAnnotation_Type extends Annotation_Type {
+public class Scoring_Type extends TestElementAnnotation_Type {
   /** @generated 
    * @return the generator for this type
    */
@@ -26,47 +25,47 @@ public class ComponentAnnotation_Type extends Annotation_Type {
   private final FSGenerator fsGenerator = 
     new FSGenerator() {
       public FeatureStructure createFS(int addr, CASImpl cas) {
-  			 if (ComponentAnnotation_Type.this.useExistingInstance) {
+  			 if (Scoring_Type.this.useExistingInstance) {
   			   // Return eq fs instance if already created
-  		     FeatureStructure fs = ComponentAnnotation_Type.this.jcas.getJfsFromCaddr(addr);
+  		     FeatureStructure fs = Scoring_Type.this.jcas.getJfsFromCaddr(addr);
   		     if (null == fs) {
-  		       fs = new ComponentAnnotation(addr, ComponentAnnotation_Type.this);
-  			   ComponentAnnotation_Type.this.jcas.putJfsFromCaddr(addr, fs);
+  		       fs = new Scoring(addr, Scoring_Type.this);
+  			   Scoring_Type.this.jcas.putJfsFromCaddr(addr, fs);
   			   return fs;
   		     }
   		     return fs;
-        } else return new ComponentAnnotation(addr, ComponentAnnotation_Type.this);
+        } else return new Scoring(addr, Scoring_Type.this);
   	  }
     };
   /** @generated */
   @SuppressWarnings ("hiding")
-  public final static int typeIndexID = ComponentAnnotation.typeIndexID;
+  public final static int typeIndexID = Scoring.typeIndexID;
   /** @generated 
      @modifiable */
   @SuppressWarnings ("hiding")
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("type.ComponentAnnotation");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("type.Scoring");
  
   /** @generated */
-  final Feature casFeat_componentId;
+  final Feature casFeat_scores;
   /** @generated */
-  final int     casFeatCode_componentId;
+  final int     casFeatCode_scores;
   /** @generated
    * @param addr low level Feature Structure reference
    * @return the feature value 
    */ 
-  public String getComponentId(int addr) {
-        if (featOkTst && casFeat_componentId == null)
-      jcas.throwFeatMissing("componentId", "type.ComponentAnnotation");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_componentId);
+  public int getScores(int addr) {
+        if (featOkTst && casFeat_scores == null)
+      jcas.throwFeatMissing("scores", "type.Scoring");
+    return ll_cas.ll_getRefValue(addr, casFeatCode_scores);
   }
   /** @generated
    * @param addr low level Feature Structure reference
    * @param v value to set 
    */    
-  public void setComponentId(int addr, String v) {
-        if (featOkTst && casFeat_componentId == null)
-      jcas.throwFeatMissing("componentId", "type.ComponentAnnotation");
-    ll_cas.ll_setStringValue(addr, casFeatCode_componentId, v);}
+  public void setScores(int addr, int v) {
+        if (featOkTst && casFeat_scores == null)
+      jcas.throwFeatMissing("scores", "type.Scoring");
+    ll_cas.ll_setRefValue(addr, casFeatCode_scores, v);}
     
   
 
@@ -77,13 +76,13 @@ public class ComponentAnnotation_Type extends Annotation_Type {
 	 * @param jcas JCas
 	 * @param casType Type 
 	 */
-  public ComponentAnnotation_Type(JCas jcas, Type casType) {
+  public Scoring_Type(JCas jcas, Type casType) {
     super(jcas, casType);
     casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
 
  
-    casFeat_componentId = jcas.getRequiredFeatureDE(casType, "componentId", "uima.cas.String", featOkTst);
-    casFeatCode_componentId  = (null == casFeat_componentId) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_componentId).getCode();
+    casFeat_scores = jcas.getRequiredFeatureDE(casType, "scores", "uima.cas.FSList", featOkTst);
+    casFeatCode_scores  = (null == casFeat_scores) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_scores).getCode();
 
   }
 }

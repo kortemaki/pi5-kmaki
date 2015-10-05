@@ -1,6 +1,6 @@
 
 
-/* First created by JCasGen Mon Sep 28 00:00:30 EDT 2015 */
+/* First created by JCasGen Mon Oct 05 10:08:06 EDT 2015 */
 package type;
 
 import org.apache.uima.jcas.JCas; 
@@ -11,10 +11,10 @@ import org.apache.uima.jcas.cas.FSList;
 
 
 /** Stores the information about a question.
- * Updated by JCasGen Mon Sep 28 02:13:23 EDT 2015
- * XML source: /Users/zal/CMU/TA/f15-11-791/template-projects/pi5/pi5-andrewid/src/main/resources/descriptors/questionPassageReaderDescriptor.xml
+ * Updated by JCasGen Mon Oct 05 10:08:06 EDT 2015
+ * XML source: /media/maki/OS/Users/Keith/Documents/CMU/Coursework/11791/PI5/pi5-kmaki/src/main/resources/descriptors/typeSystem.xml
  * @generated */
-public class Question extends ComponentAnnotation {
+public class Question extends Span {
   /** @generated
    * @ordered 
    */
@@ -99,28 +99,6 @@ public class Question extends ComponentAnnotation {
    
     
   //*--------------*
-  //* Feature: sentence
-
-  /** getter for sentence - gets The text of the question.
-   * @generated
-   * @return value of the feature 
-   */
-  public String getSentence() {
-    if (Question_Type.featOkTst && ((Question_Type)jcasType).casFeat_sentence == null)
-      jcasType.jcas.throwFeatMissing("sentence", "type.Question");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((Question_Type)jcasType).casFeatCode_sentence);}
-    
-  /** setter for sentence - sets The text of the question. 
-   * @generated
-   * @param v value to set into the feature 
-   */
-  public void setSentence(String v) {
-    if (Question_Type.featOkTst && ((Question_Type)jcasType).casFeat_sentence == null)
-      jcasType.jcas.throwFeatMissing("sentence", "type.Question");
-    jcasType.ll_cas.ll_setStringValue(addr, ((Question_Type)jcasType).casFeatCode_sentence, v);}    
-   
-    
-  //*--------------*
   //* Feature: passages
 
   /** getter for passages - gets Passages associated with this question.
@@ -143,25 +121,25 @@ public class Question extends ComponentAnnotation {
    
     
   //*--------------*
-  //* Feature: performance
+  //* Feature: question
 
-  /** getter for performance - gets This stores all the measurements related to the question.
+  /** getter for question - gets The Span corresponding to the text of the question annotated by this annotation.
    * @generated
    * @return value of the feature 
    */
-  public Performance getPerformance() {
-    if (Question_Type.featOkTst && ((Question_Type)jcasType).casFeat_performance == null)
-      jcasType.jcas.throwFeatMissing("performance", "type.Question");
-    return (Performance)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Question_Type)jcasType).casFeatCode_performance)));}
+  public Span getQuestion() {
+    if (Question_Type.featOkTst && ((Question_Type)jcasType).casFeat_question == null)
+      jcasType.jcas.throwFeatMissing("question", "type.Question");
+    return (Span)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Question_Type)jcasType).casFeatCode_question)));}
     
-  /** setter for performance - sets This stores all the measurements related to the question. 
+  /** setter for question - sets The Span corresponding to the text of the question annotated by this annotation. 
    * @generated
    * @param v value to set into the feature 
    */
-  public void setPerformance(Performance v) {
-    if (Question_Type.featOkTst && ((Question_Type)jcasType).casFeat_performance == null)
-      jcasType.jcas.throwFeatMissing("performance", "type.Question");
-    jcasType.ll_cas.ll_setRefValue(addr, ((Question_Type)jcasType).casFeatCode_performance, jcasType.ll_cas.ll_getFSRef(v));}    
+  public void setQuestion(Span v) {
+    if (Question_Type.featOkTst && ((Question_Type)jcasType).casFeat_question == null)
+      jcasType.jcas.throwFeatMissing("question", "type.Question");
+    jcasType.ll_cas.ll_setRefValue(addr, ((Question_Type)jcasType).casFeatCode_question, jcasType.ll_cas.ll_getFSRef(v));}    
   }
 
     

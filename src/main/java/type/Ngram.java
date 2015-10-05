@@ -7,19 +7,18 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
 import org.apache.uima.jcas.cas.TOP_Type;
 
-import org.apache.uima.jcas.tcas.Annotation;
 
 
-/** A parent annotation which expects individual annotation types to inherit from.
+/** A Span annotation holding a tokenization of fixed length n.
  * Updated by JCasGen Mon Oct 05 10:08:06 EDT 2015
  * XML source: /media/maki/OS/Users/Keith/Documents/CMU/Coursework/11791/PI5/pi5-kmaki/src/main/resources/descriptors/typeSystem.xml
  * @generated */
-public class ComponentAnnotation extends Annotation {
+public class Ngram extends TokenizedSpan {
   /** @generated
    * @ordered 
    */
   @SuppressWarnings ("hiding")
-  public final static int typeIndexID = JCasRegistry.register(ComponentAnnotation.class);
+  public final static int typeIndexID = JCasRegistry.register(Ngram.class);
   /** @generated
    * @ordered 
    */
@@ -33,14 +32,14 @@ public class ComponentAnnotation extends Annotation {
  
   /** Never called.  Disable default constructor
    * @generated */
-  protected ComponentAnnotation() {/* intentionally empty block */}
+  protected Ngram() {/* intentionally empty block */}
     
   /** Internal - constructor used by generator 
    * @generated
    * @param addr low level Feature Structure reference
    * @param type the type of this Feature Structure 
    */
-  public ComponentAnnotation(int addr, TOP_Type type) {
+  public Ngram(int addr, TOP_Type type) {
     super(addr, type);
     readObject();
   }
@@ -48,7 +47,7 @@ public class ComponentAnnotation extends Annotation {
   /** @generated
    * @param jcas JCas to which this Feature Structure belongs 
    */
-  public ComponentAnnotation(JCas jcas) {
+  public Ngram(JCas jcas) {
     super(jcas);
     readObject();   
   } 
@@ -58,7 +57,7 @@ public class ComponentAnnotation extends Annotation {
    * @param begin offset to the begin spot in the SofA
    * @param end offset to the end spot in the SofA 
   */  
-  public ComponentAnnotation(JCas jcas, int begin, int end) {
+  public Ngram(JCas jcas, int begin, int end) {
     super(jcas);
     setBegin(begin);
     setEnd(end);
@@ -77,25 +76,25 @@ public class ComponentAnnotation extends Annotation {
  
     
   //*--------------*
-  //* Feature: componentId
+  //* Feature: n
 
-  /** getter for componentId - gets An identifier that specifies which system produced this annotation.
+  /** getter for n - gets The number of tokens n in the annotated ngram.
    * @generated
    * @return value of the feature 
    */
-  public String getComponentId() {
-    if (ComponentAnnotation_Type.featOkTst && ((ComponentAnnotation_Type)jcasType).casFeat_componentId == null)
-      jcasType.jcas.throwFeatMissing("componentId", "type.ComponentAnnotation");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((ComponentAnnotation_Type)jcasType).casFeatCode_componentId);}
+  public int getN() {
+    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_n == null)
+      jcasType.jcas.throwFeatMissing("n", "type.Ngram");
+    return jcasType.ll_cas.ll_getIntValue(addr, ((Ngram_Type)jcasType).casFeatCode_n);}
     
-  /** setter for componentId - sets An identifier that specifies which system produced this annotation. 
+  /** setter for n - sets The number of tokens n in the annotated ngram. 
    * @generated
    * @param v value to set into the feature 
    */
-  public void setComponentId(String v) {
-    if (ComponentAnnotation_Type.featOkTst && ((ComponentAnnotation_Type)jcasType).casFeat_componentId == null)
-      jcasType.jcas.throwFeatMissing("componentId", "type.ComponentAnnotation");
-    jcasType.ll_cas.ll_setStringValue(addr, ((ComponentAnnotation_Type)jcasType).casFeatCode_componentId, v);}    
+  public void setN(int v) {
+    if (Ngram_Type.featOkTst && ((Ngram_Type)jcasType).casFeat_n == null)
+      jcasType.jcas.throwFeatMissing("n", "type.Ngram");
+    jcasType.ll_cas.ll_setIntValue(addr, ((Ngram_Type)jcasType).casFeatCode_n, v);}    
   }
 
     

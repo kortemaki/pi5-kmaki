@@ -54,7 +54,7 @@ public class PassageRankingWriter extends CasConsumer_ImplBase {
         return;
       }
       
-      writer.println("question_id,p_at_1,p_at_5,mrr,map");
+      writer.println("question_id,p_at_1,p_at_5,rr,ap");
       // Retrieve all the questions for printout
       FSIterator it = jcas.getAnnotationIndex(Question.type).iterator();
       while (it.hasNext()) {

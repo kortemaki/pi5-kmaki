@@ -37,7 +37,7 @@ public class Main {
     cr.reconfigure();
 
     // Configure your aggregate analysis engine here, if you want to.
-
+    
     // Configure your CAS consumer with the given output directory. The code below assumes that the
     // CAS consumer has a parameter 'OutputDir' to specify the output directory. The code below
     // assumes that the CAS Consumer can be accessed at index 1 from the array of CasProcessors[]

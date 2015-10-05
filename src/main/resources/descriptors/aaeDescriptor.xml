@@ -3,24 +3,44 @@
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
   <primitive>false</primitive>  
   <delegateAnalysisEngineSpecifiers>
-    <delegateAnalysisEngine key="questionAnnotatorDescriptor">
-      <import name="descriptors.questionAnnotatorDescriptor"/>
+    <delegateAnalysisEngine key="TestElementAnnotator">
+      <import name="descriptors.annotators.TestElementAnnotator"/>
     </delegateAnalysisEngine>
-    <delegateAnalysisEngine key="passageAnnotatorDescriptor">
-      <import name="descriptors.passageAnnotatorDescriptor"/>
+    <delegateAnalysisEngine key="TokenizationAnnotator">
+      <import name="descriptors.annotators.TokenizationAnnotator"/>
+    </delegateAnalysisEngine>
+  <delegateAnalysisEngine key="NgramAnnotator">
+      <import name="descriptors.annotators.NgramAnnotator"/>
+    
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="ScoreAnnotator">
+      <import name="descriptors.annotators.ScoreAnnotator"/>
+    
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="PrecisionAtNAnnotatorDescriptor">
+      <import name="descriptors.annotators.PrecisionAtNAnnotatorDescriptor"/>
+    
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="outputAnnotator">
+      <import name="descriptors.annotators.outputAnnotator"/>
+    
     </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>aaeDescriptor</name>
-    <description>This is a template (empty) descriptor for your Aggerate Analysis Engine.  You will need to specify your type system and capabilities, in addition to your individual analysis engines.</description>
+    <description>This is the descriptor for the pi5-kmaki Aggerate Analysis Engine.</description>
     <version>1.0</version>
     <vendor/>
-    <configurationParameters/>
+    <configurationParameters searchStrategy="language_fallback"/>
     <configurationParameterSettings/>
     <flowConstraints>
       <fixedFlow>
-        <node>questionAnnotatorDescriptor</node>
-        <node>passageAnnotatorDescriptor</node>
+        <node>TestElementAnnotator</node>
+        <node>TokenizationAnnotator</node>
+      <node>NgramAnnotator</node>
+        <node>ScoreAnnotator</node>
+        <node>PrecisionAtNAnnotatorDescriptor</node>
+        <node>outputAnnotator</node>
       </fixedFlow>
     </flowConstraints>
     <typePriorities/>

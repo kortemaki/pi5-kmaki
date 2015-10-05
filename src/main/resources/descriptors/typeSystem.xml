@@ -16,36 +16,12 @@ You need to implement the types requried for your ranking model.</description>
           <description>An identifier that specifies which system produced this annotation.</description>
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
-        <featureDescription>
-          <name>score</name>
-          <description>The ranking score acquired for the answer and the confidence score acquired for the question.</description>
-          <rangeTypeName>uima.cas.Double</rangeTypeName>
-        </featureDescription>
-      </features>
-    </typeDescription>
-    <typeDescription>
-      <name>type.InputDocument</name>
-      <description>Stores all the questions and its associated answer candidates.</description>
-      <supertypeName>type.ComponentAnnotation</supertypeName>
-      <features>
-        <featureDescription>
-          <name>passages</name>
-          <description>All the passages found in the input file.</description>
-          <rangeTypeName>uima.cas.FSList</rangeTypeName>
-          <elementType>type.Passage</elementType>
-        </featureDescription>
-        <featureDescription>
-          <name>questions</name>
-          <description>All the questions found in the input file.</description>
-          <rangeTypeName>uima.cas.FSList</rangeTypeName>
-          <elementType>type.Question</elementType>
-        </featureDescription>
-      </features>
+        </features>
     </typeDescription>
     <typeDescription>
       <name>type.Question</name>
       <description>Stores the information about a question.</description>
-      <supertypeName>type.ComponentAnnotation</supertypeName>
+      <supertypeName>type.Span</supertypeName>
       <features>
         <featureDescription>
           <name>id</name>
@@ -53,33 +29,23 @@ You need to implement the types requried for your ranking model.</description>
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
         <featureDescription>
-          <name>sentence</name>
-          <description>The text of the question.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
-      <featureDescription>
           <name>passages</name>
           <description>Passages associated with this question.</description>
           <rangeTypeName>uima.cas.FSList</rangeTypeName>
           <elementType>type.Passage</elementType>
         </featureDescription>
       <featureDescription>
-          <name>performance</name>
-          <description>This stores all the measurements related to the question.</description>
-          <rangeTypeName>type.Performance</rangeTypeName>
+          <name>question</name>
+          <description>The Span corresponding to the text of the question annotated by this annotation.</description>
+          <rangeTypeName>type.Span</rangeTypeName>
         </featureDescription>
       </features>
     </typeDescription>
     <typeDescription>
       <name>type.Passage</name>
       <description>Stores the information of the passage.</description>
-      <supertypeName>type.ComponentAnnotation</supertypeName>
+      <supertypeName>type.Span</supertypeName>
       <features>
-        <featureDescription>
-          <name>text</name>
-          <description>The passage text extracted from the source document.</description>
-          <rangeTypeName>uima.cas.String</rangeTypeName>
-        </featureDescription>
         <featureDescription>
           <name>label</name>
           <description>This stores a gold standard label of this answer.  'True' means that it answers the question; otherwise, it is does not.</description>
@@ -91,36 +57,166 @@ You need to implement the types requried for your ranking model.</description>
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
       <featureDescription>
-          <name>questionId</name>
-          <description>This denotes the corresponding question ID.</description>
+          <name>passage</name>
+          <description>The text of the passage annotated by this annotation.</description>
+          <rangeTypeName>type.Span</rangeTypeName>
+        </featureDescription>
+      <featureDescription>
+          <name>question</name>
+          <description>The question for which this passage is a candidate answer.</description>
+          <rangeTypeName>type.Question</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>type.ScoredSpan</name>
+      <description>A span with a score</description>
+      <supertypeName>type.SpanModification</supertypeName>
+      <features>
+        <featureDescription>
+          <name>score</name>
+          <description>The score for this annotation</description>
+          <rangeTypeName>uima.cas.Double</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>type.Span</name>
+      <description>Component Annotation with a text field to identify the relevant text of the annotated span.</description>
+      <supertypeName>type.ComponentAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>text</name>
+          <description>The relevant text of the annotated Span</description>
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>
       </features>
     </typeDescription>
     <typeDescription>
-      <name>type.Performance</name>
-      <description/>
-      <supertypeName>uima.cas.TOP</supertypeName>
+      <name>type.TokenizedSpan</name>
+      <description>Annotation providing a tokenization for the annotated span</description>
+      <supertypeName>type.SpanModification</supertypeName>
       <features>
         <featureDescription>
-          <name>pAt1</name>
-          <description>This is the Precision@1 for the question</description>
-          <rangeTypeName>uima.cas.Double</rangeTypeName>
+          <name>tokens</name>
+          <description>The tokenization for the annotated Span</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>type.Span</elementType>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>type.TokenAnnotation</name>
+      <description>Annotates a test element with tokenizations for the question and each of its passages.</description>
+      <supertypeName>type.TestElementAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>questionTokens</name>
+          <description>The tokenization for the annotated Test Element's question.</description>
+          <rangeTypeName>type.TokenizedSpan</rangeTypeName>
         </featureDescription>
         <featureDescription>
-          <name>pAt5</name>
-          <description>This is the Precision@5 of the question.</description>
-          <rangeTypeName>uima.cas.Double</rangeTypeName>
+          <name>passageTokens</name>
+          <description>List of tokenizations for the respective passages associated with the annotated Test Element.</description>
+          <rangeTypeName>uima.cas.FSList</rangeTypeName>
+          <elementType>type.TokenizedSpan</elementType>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>type.Ngram</name>
+      <description>A Span annotation holding a tokenization of fixed length n.</description>
+      <supertypeName>type.TokenizedSpan</supertypeName>
+      <features>
+        <featureDescription>
+          <name>n</name>
+          <description>The number of tokens n in the annotated ngram.</description>
+          <rangeTypeName>uima.cas.Integer</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>type.NgramSet</name>
+      <description>Holds a set of ngrams annotated within the annotated span.</description>
+      <supertypeName>type.SpanModification</supertypeName>
+      <features>
+        <featureDescription>
+          <name>ngrams</name>
+          <description>Array of ngrams annotated for this Span.</description>
+          <rangeTypeName>uima.cas.FSArray</rangeTypeName>
+          <elementType>type.Ngram</elementType>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>type.NgramAnnotation</name>
+      <description>Annotates ngrams for the relevant parts of a test element.</description>
+      <supertypeName>type.TestElementAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>questionNgrams</name>
+          <description>The set of ngrams annotated for the question associated with this Test Element.</description>
+          <rangeTypeName>type.NgramSet</rangeTypeName>
         </featureDescription>
         <featureDescription>
-          <name>mmr</name>
-          <description>This is the Maximum Marginal Relevance measurment of the question.</description>
-          <rangeTypeName>uima.cas.Double</rangeTypeName>
+          <name>passageNgrams</name>
+          <description>List of sets of ngrams for each of the respective passages associated with this Test Element.</description>
+          <rangeTypeName>uima.cas.FSList</rangeTypeName>
+          <elementType>type.NgramSet</elementType>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>type.Scoring</name>
+      <description>Annotation holding the ranking scores for each of the passages associated with this Test Element.</description>
+      <supertypeName>type.TestElementAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>scores</name>
+          <description>The list of scores for each of the respective passages associated with this Test Element.</description>
+          <rangeTypeName>uima.cas.FSList</rangeTypeName>
+          <elementType>type.ScoredSpan</elementType>
+        </featureDescription>
+      </features>
+    </typeDescription>
+  <typeDescription>
+      <name>type.TestElementAnnotation</name>
+      <description>Annotation which builds on a test element.</description>
+      <supertypeName>type.Span</supertypeName>
+      <features>
+        <featureDescription>
+          <name>question</name>
+          <description>The question associated with this annotation.</description>
+          <rangeTypeName>type.Question</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>type.OutputAnnotation</name>
+      <description>The finished output for the annotated test element.</description>
+      <supertypeName>type.TestElementAnnotation</supertypeName>
+      <features>
+        <featureDescription>
+          <name>output</name>
+          <description>The output for the annotated test element.</description>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+      </features>
+    </typeDescription>
+    <typeDescription>
+      <name>type.SpanModification</name>
+      <description>An annotation which modifies a span (e.g. a tokenization).</description>
+      <supertypeName>type.Span</supertypeName>
+      <features>
+        <featureDescription>
+          <name>span</name>
+          <description>The original span annotation for this downstream annotation.</description>
+          <rangeTypeName>type.Span</rangeTypeName>
         </featureDescription>
         <featureDescription>
-          <name>map</name>
-          <description>This is the Mean Average Precision measurement of the question.</description>
-          <rangeTypeName>uima.cas.Double</rangeTypeName>
+          <name>passage</name>
+          <description>Hack to get the span to cast to a passage in the case that it's supposed to.</description>
+          <rangeTypeName>type.Passage</rangeTypeName>
         </featureDescription>
       </features>
     </typeDescription>

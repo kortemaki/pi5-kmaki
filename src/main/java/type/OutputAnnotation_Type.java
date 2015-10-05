@@ -11,12 +11,11 @@ import org.apache.uima.cas.impl.TypeImpl;
 import org.apache.uima.cas.Type;
 import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
-import org.apache.uima.jcas.tcas.Annotation_Type;
 
-/** A parent annotation which expects individual annotation types to inherit from.
+/** The finished output for the annotated test element.
  * Updated by JCasGen Mon Oct 05 10:08:06 EDT 2015
  * @generated */
-public class ComponentAnnotation_Type extends Annotation_Type {
+public class OutputAnnotation_Type extends TestElementAnnotation_Type {
   /** @generated 
    * @return the generator for this type
    */
@@ -26,47 +25,47 @@ public class ComponentAnnotation_Type extends Annotation_Type {
   private final FSGenerator fsGenerator = 
     new FSGenerator() {
       public FeatureStructure createFS(int addr, CASImpl cas) {
-  			 if (ComponentAnnotation_Type.this.useExistingInstance) {
+  			 if (OutputAnnotation_Type.this.useExistingInstance) {
   			   // Return eq fs instance if already created
-  		     FeatureStructure fs = ComponentAnnotation_Type.this.jcas.getJfsFromCaddr(addr);
+  		     FeatureStructure fs = OutputAnnotation_Type.this.jcas.getJfsFromCaddr(addr);
   		     if (null == fs) {
-  		       fs = new ComponentAnnotation(addr, ComponentAnnotation_Type.this);
-  			   ComponentAnnotation_Type.this.jcas.putJfsFromCaddr(addr, fs);
+  		       fs = new OutputAnnotation(addr, OutputAnnotation_Type.this);
+  			   OutputAnnotation_Type.this.jcas.putJfsFromCaddr(addr, fs);
   			   return fs;
   		     }
   		     return fs;
-        } else return new ComponentAnnotation(addr, ComponentAnnotation_Type.this);
+        } else return new OutputAnnotation(addr, OutputAnnotation_Type.this);
   	  }
     };
   /** @generated */
   @SuppressWarnings ("hiding")
-  public final static int typeIndexID = ComponentAnnotation.typeIndexID;
+  public final static int typeIndexID = OutputAnnotation.typeIndexID;
   /** @generated 
      @modifiable */
   @SuppressWarnings ("hiding")
-  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("type.ComponentAnnotation");
+  public final static boolean featOkTst = JCasRegistry.getFeatOkTst("type.OutputAnnotation");
  
   /** @generated */
-  final Feature casFeat_componentId;
+  final Feature casFeat_output;
   /** @generated */
-  final int     casFeatCode_componentId;
+  final int     casFeatCode_output;
   /** @generated
    * @param addr low level Feature Structure reference
    * @return the feature value 
    */ 
-  public String getComponentId(int addr) {
-        if (featOkTst && casFeat_componentId == null)
-      jcas.throwFeatMissing("componentId", "type.ComponentAnnotation");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_componentId);
+  public String getOutput(int addr) {
+        if (featOkTst && casFeat_output == null)
+      jcas.throwFeatMissing("output", "type.OutputAnnotation");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_output);
   }
   /** @generated
    * @param addr low level Feature Structure reference
    * @param v value to set 
    */    
-  public void setComponentId(int addr, String v) {
-        if (featOkTst && casFeat_componentId == null)
-      jcas.throwFeatMissing("componentId", "type.ComponentAnnotation");
-    ll_cas.ll_setStringValue(addr, casFeatCode_componentId, v);}
+  public void setOutput(int addr, String v) {
+        if (featOkTst && casFeat_output == null)
+      jcas.throwFeatMissing("output", "type.OutputAnnotation");
+    ll_cas.ll_setStringValue(addr, casFeatCode_output, v);}
     
   
 
@@ -77,13 +76,13 @@ public class ComponentAnnotation_Type extends Annotation_Type {
 	 * @param jcas JCas
 	 * @param casType Type 
 	 */
-  public ComponentAnnotation_Type(JCas jcas, Type casType) {
+  public OutputAnnotation_Type(JCas jcas, Type casType) {
     super(jcas, casType);
     casImpl.getFSClassRegistry().addGeneratorForType((TypeImpl)this.casType, getFSGenerator());
 
  
-    casFeat_componentId = jcas.getRequiredFeatureDE(casType, "componentId", "uima.cas.String", featOkTst);
-    casFeatCode_componentId  = (null == casFeat_componentId) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_componentId).getCode();
+    casFeat_output = jcas.getRequiredFeatureDE(casType, "output", "uima.cas.String", featOkTst);
+    casFeatCode_output  = (null == casFeat_output) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_output).getCode();
 
   }
 }

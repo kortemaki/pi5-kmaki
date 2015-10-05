@@ -7,19 +7,18 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
 import org.apache.uima.jcas.cas.TOP_Type;
 
-import org.apache.uima.jcas.tcas.Annotation;
 
 
-/** A parent annotation which expects individual annotation types to inherit from.
+/** Annotation which builds on a test element.
  * Updated by JCasGen Mon Oct 05 10:08:06 EDT 2015
  * XML source: /media/maki/OS/Users/Keith/Documents/CMU/Coursework/11791/PI5/pi5-kmaki/src/main/resources/descriptors/typeSystem.xml
  * @generated */
-public class ComponentAnnotation extends Annotation {
+public class TestElementAnnotation extends Span {
   /** @generated
    * @ordered 
    */
   @SuppressWarnings ("hiding")
-  public final static int typeIndexID = JCasRegistry.register(ComponentAnnotation.class);
+  public final static int typeIndexID = JCasRegistry.register(TestElementAnnotation.class);
   /** @generated
    * @ordered 
    */
@@ -33,14 +32,14 @@ public class ComponentAnnotation extends Annotation {
  
   /** Never called.  Disable default constructor
    * @generated */
-  protected ComponentAnnotation() {/* intentionally empty block */}
+  protected TestElementAnnotation() {/* intentionally empty block */}
     
   /** Internal - constructor used by generator 
    * @generated
    * @param addr low level Feature Structure reference
    * @param type the type of this Feature Structure 
    */
-  public ComponentAnnotation(int addr, TOP_Type type) {
+  public TestElementAnnotation(int addr, TOP_Type type) {
     super(addr, type);
     readObject();
   }
@@ -48,7 +47,7 @@ public class ComponentAnnotation extends Annotation {
   /** @generated
    * @param jcas JCas to which this Feature Structure belongs 
    */
-  public ComponentAnnotation(JCas jcas) {
+  public TestElementAnnotation(JCas jcas) {
     super(jcas);
     readObject();   
   } 
@@ -58,7 +57,7 @@ public class ComponentAnnotation extends Annotation {
    * @param begin offset to the begin spot in the SofA
    * @param end offset to the end spot in the SofA 
   */  
-  public ComponentAnnotation(JCas jcas, int begin, int end) {
+  public TestElementAnnotation(JCas jcas, int begin, int end) {
     super(jcas);
     setBegin(begin);
     setEnd(end);
@@ -77,25 +76,25 @@ public class ComponentAnnotation extends Annotation {
  
     
   //*--------------*
-  //* Feature: componentId
+  //* Feature: question
 
-  /** getter for componentId - gets An identifier that specifies which system produced this annotation.
+  /** getter for question - gets The question associated with this annotation.
    * @generated
    * @return value of the feature 
    */
-  public String getComponentId() {
-    if (ComponentAnnotation_Type.featOkTst && ((ComponentAnnotation_Type)jcasType).casFeat_componentId == null)
-      jcasType.jcas.throwFeatMissing("componentId", "type.ComponentAnnotation");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((ComponentAnnotation_Type)jcasType).casFeatCode_componentId);}
+  public Question getQuestion() {
+    if (TestElementAnnotation_Type.featOkTst && ((TestElementAnnotation_Type)jcasType).casFeat_question == null)
+      jcasType.jcas.throwFeatMissing("question", "type.TestElementAnnotation");
+    return (Question)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((TestElementAnnotation_Type)jcasType).casFeatCode_question)));}
     
-  /** setter for componentId - sets An identifier that specifies which system produced this annotation. 
+  /** setter for question - sets The question associated with this annotation. 
    * @generated
    * @param v value to set into the feature 
    */
-  public void setComponentId(String v) {
-    if (ComponentAnnotation_Type.featOkTst && ((ComponentAnnotation_Type)jcasType).casFeat_componentId == null)
-      jcasType.jcas.throwFeatMissing("componentId", "type.ComponentAnnotation");
-    jcasType.ll_cas.ll_setStringValue(addr, ((ComponentAnnotation_Type)jcasType).casFeatCode_componentId, v);}    
+  public void setQuestion(Question v) {
+    if (TestElementAnnotation_Type.featOkTst && ((TestElementAnnotation_Type)jcasType).casFeat_question == null)
+      jcasType.jcas.throwFeatMissing("question", "type.TestElementAnnotation");
+    jcasType.ll_cas.ll_setRefValue(addr, ((TestElementAnnotation_Type)jcasType).casFeatCode_question, jcasType.ll_cas.ll_getFSRef(v));}    
   }
 
     

@@ -7,19 +7,18 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.JCasRegistry;
 import org.apache.uima.jcas.cas.TOP_Type;
 
-import org.apache.uima.jcas.tcas.Annotation;
 
 
-/** A parent annotation which expects individual annotation types to inherit from.
+/** Component Annotation with a text field to identify the relevant text of the annotated span.
  * Updated by JCasGen Mon Oct 05 10:08:06 EDT 2015
  * XML source: /media/maki/OS/Users/Keith/Documents/CMU/Coursework/11791/PI5/pi5-kmaki/src/main/resources/descriptors/typeSystem.xml
  * @generated */
-public class ComponentAnnotation extends Annotation {
+public class Span extends ComponentAnnotation {
   /** @generated
    * @ordered 
    */
   @SuppressWarnings ("hiding")
-  public final static int typeIndexID = JCasRegistry.register(ComponentAnnotation.class);
+  public final static int typeIndexID = JCasRegistry.register(Span.class);
   /** @generated
    * @ordered 
    */
@@ -33,14 +32,14 @@ public class ComponentAnnotation extends Annotation {
  
   /** Never called.  Disable default constructor
    * @generated */
-  protected ComponentAnnotation() {/* intentionally empty block */}
+  protected Span() {/* intentionally empty block */}
     
   /** Internal - constructor used by generator 
    * @generated
    * @param addr low level Feature Structure reference
    * @param type the type of this Feature Structure 
    */
-  public ComponentAnnotation(int addr, TOP_Type type) {
+  public Span(int addr, TOP_Type type) {
     super(addr, type);
     readObject();
   }
@@ -48,7 +47,7 @@ public class ComponentAnnotation extends Annotation {
   /** @generated
    * @param jcas JCas to which this Feature Structure belongs 
    */
-  public ComponentAnnotation(JCas jcas) {
+  public Span(JCas jcas) {
     super(jcas);
     readObject();   
   } 
@@ -58,7 +57,7 @@ public class ComponentAnnotation extends Annotation {
    * @param begin offset to the begin spot in the SofA
    * @param end offset to the end spot in the SofA 
   */  
-  public ComponentAnnotation(JCas jcas, int begin, int end) {
+  public Span(JCas jcas, int begin, int end) {
     super(jcas);
     setBegin(begin);
     setEnd(end);
@@ -77,25 +76,25 @@ public class ComponentAnnotation extends Annotation {
  
     
   //*--------------*
-  //* Feature: componentId
+  //* Feature: text
 
-  /** getter for componentId - gets An identifier that specifies which system produced this annotation.
+  /** getter for text - gets The relevant text of the annotated Span
    * @generated
    * @return value of the feature 
    */
-  public String getComponentId() {
-    if (ComponentAnnotation_Type.featOkTst && ((ComponentAnnotation_Type)jcasType).casFeat_componentId == null)
-      jcasType.jcas.throwFeatMissing("componentId", "type.ComponentAnnotation");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((ComponentAnnotation_Type)jcasType).casFeatCode_componentId);}
+  public String getText() {
+    if (Span_Type.featOkTst && ((Span_Type)jcasType).casFeat_text == null)
+      jcasType.jcas.throwFeatMissing("text", "type.Span");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((Span_Type)jcasType).casFeatCode_text);}
     
-  /** setter for componentId - sets An identifier that specifies which system produced this annotation. 
+  /** setter for text - sets The relevant text of the annotated Span 
    * @generated
    * @param v value to set into the feature 
    */
-  public void setComponentId(String v) {
-    if (ComponentAnnotation_Type.featOkTst && ((ComponentAnnotation_Type)jcasType).casFeat_componentId == null)
-      jcasType.jcas.throwFeatMissing("componentId", "type.ComponentAnnotation");
-    jcasType.ll_cas.ll_setStringValue(addr, ((ComponentAnnotation_Type)jcasType).casFeatCode_componentId, v);}    
+  public void setText(String v) {
+    if (Span_Type.featOkTst && ((Span_Type)jcasType).casFeat_text == null)
+      jcasType.jcas.throwFeatMissing("text", "type.Span");
+    jcasType.ll_cas.ll_setStringValue(addr, ((Span_Type)jcasType).casFeatCode_text, v);}    
   }
 
     

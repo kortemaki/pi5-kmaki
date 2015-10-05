@@ -1,6 +1,6 @@
 
 
-/* First created by JCasGen Mon Sep 28 00:00:30 EDT 2015 */
+/* First created by JCasGen Mon Oct 05 10:08:06 EDT 2015 */
 package type;
 
 import org.apache.uima.jcas.JCas; 
@@ -10,10 +10,10 @@ import org.apache.uima.jcas.cas.TOP_Type;
 
 
 /** Stores the information of the passage.
- * Updated by JCasGen Mon Sep 28 02:13:23 EDT 2015
- * XML source: /Users/zal/CMU/TA/f15-11-791/template-projects/pi5/pi5-andrewid/src/main/resources/descriptors/questionPassageReaderDescriptor.xml
+ * Updated by JCasGen Mon Oct 05 10:08:06 EDT 2015
+ * XML source: /media/maki/OS/Users/Keith/Documents/CMU/Coursework/11791/PI5/pi5-kmaki/src/main/resources/descriptors/typeSystem.xml
  * @generated */
-public class Passage extends ComponentAnnotation {
+public class Passage extends Span {
   /** @generated
    * @ordered 
    */
@@ -76,28 +76,6 @@ public class Passage extends ComponentAnnotation {
  
     
   //*--------------*
-  //* Feature: text
-
-  /** getter for text - gets The passage text extracted from the source document.
-   * @generated
-   * @return value of the feature 
-   */
-  public String getText() {
-    if (Passage_Type.featOkTst && ((Passage_Type)jcasType).casFeat_text == null)
-      jcasType.jcas.throwFeatMissing("text", "type.Passage");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((Passage_Type)jcasType).casFeatCode_text);}
-    
-  /** setter for text - sets The passage text extracted from the source document. 
-   * @generated
-   * @param v value to set into the feature 
-   */
-  public void setText(String v) {
-    if (Passage_Type.featOkTst && ((Passage_Type)jcasType).casFeat_text == null)
-      jcasType.jcas.throwFeatMissing("text", "type.Passage");
-    jcasType.ll_cas.ll_setStringValue(addr, ((Passage_Type)jcasType).casFeatCode_text, v);}    
-   
-    
-  //*--------------*
   //* Feature: label
 
   /** getter for label - gets This stores a gold standard label of this answer.  'True' means that it answers the question; otherwise, it is does not.
@@ -142,25 +120,47 @@ public class Passage extends ComponentAnnotation {
    
     
   //*--------------*
-  //* Feature: questionId
+  //* Feature: passage
 
-  /** getter for questionId - gets This denotes the corresponding question ID.
+  /** getter for passage - gets The text of the passage annotated by this annotation.
    * @generated
    * @return value of the feature 
    */
-  public String getQuestionId() {
-    if (Passage_Type.featOkTst && ((Passage_Type)jcasType).casFeat_questionId == null)
-      jcasType.jcas.throwFeatMissing("questionId", "type.Passage");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((Passage_Type)jcasType).casFeatCode_questionId);}
+  public Span getPassage() {
+    if (Passage_Type.featOkTst && ((Passage_Type)jcasType).casFeat_passage == null)
+      jcasType.jcas.throwFeatMissing("passage", "type.Passage");
+    return (Span)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Passage_Type)jcasType).casFeatCode_passage)));}
     
-  /** setter for questionId - sets This denotes the corresponding question ID. 
+  /** setter for passage - sets The text of the passage annotated by this annotation. 
    * @generated
    * @param v value to set into the feature 
    */
-  public void setQuestionId(String v) {
-    if (Passage_Type.featOkTst && ((Passage_Type)jcasType).casFeat_questionId == null)
-      jcasType.jcas.throwFeatMissing("questionId", "type.Passage");
-    jcasType.ll_cas.ll_setStringValue(addr, ((Passage_Type)jcasType).casFeatCode_questionId, v);}    
+  public void setPassage(Span v) {
+    if (Passage_Type.featOkTst && ((Passage_Type)jcasType).casFeat_passage == null)
+      jcasType.jcas.throwFeatMissing("passage", "type.Passage");
+    jcasType.ll_cas.ll_setRefValue(addr, ((Passage_Type)jcasType).casFeatCode_passage, jcasType.ll_cas.ll_getFSRef(v));}    
+   
+    
+  //*--------------*
+  //* Feature: question
+
+  /** getter for question - gets The question for which this passage is a candidate answer.
+   * @generated
+   * @return value of the feature 
+   */
+  public Question getQuestion() {
+    if (Passage_Type.featOkTst && ((Passage_Type)jcasType).casFeat_question == null)
+      jcasType.jcas.throwFeatMissing("question", "type.Passage");
+    return (Question)(jcasType.ll_cas.ll_getFSForRef(jcasType.ll_cas.ll_getRefValue(addr, ((Passage_Type)jcasType).casFeatCode_question)));}
+    
+  /** setter for question - sets The question for which this passage is a candidate answer. 
+   * @generated
+   * @param v value to set into the feature 
+   */
+  public void setQuestion(Question v) {
+    if (Passage_Type.featOkTst && ((Passage_Type)jcasType).casFeat_question == null)
+      jcasType.jcas.throwFeatMissing("question", "type.Passage");
+    jcasType.ll_cas.ll_setRefValue(addr, ((Passage_Type)jcasType).casFeatCode_question, jcasType.ll_cas.ll_getFSRef(v));}    
   }
 
     

@@ -1,5 +1,5 @@
 
-/* First created by JCasGen Mon Sep 28 00:00:30 EDT 2015 */
+/* First created by JCasGen Mon Oct 05 10:08:06 EDT 2015 */
 package type;
 
 import org.apache.uima.jcas.JCas;
@@ -13,9 +13,9 @@ import org.apache.uima.cas.impl.FeatureImpl;
 import org.apache.uima.cas.Feature;
 
 /** Stores the information about a question.
- * Updated by JCasGen Mon Sep 28 02:13:23 EDT 2015
+ * Updated by JCasGen Mon Oct 05 10:08:06 EDT 2015
  * @generated */
-public class Question_Type extends ComponentAnnotation_Type {
+public class Question_Type extends Span_Type {
   /** @generated 
    * @return the generator for this type
    */
@@ -70,30 +70,6 @@ public class Question_Type extends ComponentAnnotation_Type {
   
  
   /** @generated */
-  final Feature casFeat_sentence;
-  /** @generated */
-  final int     casFeatCode_sentence;
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @return the feature value 
-   */ 
-  public String getSentence(int addr) {
-        if (featOkTst && casFeat_sentence == null)
-      jcas.throwFeatMissing("sentence", "type.Question");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_sentence);
-  }
-  /** @generated
-   * @param addr low level Feature Structure reference
-   * @param v value to set 
-   */    
-  public void setSentence(int addr, String v) {
-        if (featOkTst && casFeat_sentence == null)
-      jcas.throwFeatMissing("sentence", "type.Question");
-    ll_cas.ll_setStringValue(addr, casFeatCode_sentence, v);}
-    
-  
- 
-  /** @generated */
   final Feature casFeat_passages;
   /** @generated */
   final int     casFeatCode_passages;
@@ -118,26 +94,26 @@ public class Question_Type extends ComponentAnnotation_Type {
   
  
   /** @generated */
-  final Feature casFeat_performance;
+  final Feature casFeat_question;
   /** @generated */
-  final int     casFeatCode_performance;
+  final int     casFeatCode_question;
   /** @generated
    * @param addr low level Feature Structure reference
    * @return the feature value 
    */ 
-  public int getPerformance(int addr) {
-        if (featOkTst && casFeat_performance == null)
-      jcas.throwFeatMissing("performance", "type.Question");
-    return ll_cas.ll_getRefValue(addr, casFeatCode_performance);
+  public int getQuestion(int addr) {
+        if (featOkTst && casFeat_question == null)
+      jcas.throwFeatMissing("question", "type.Question");
+    return ll_cas.ll_getRefValue(addr, casFeatCode_question);
   }
   /** @generated
    * @param addr low level Feature Structure reference
    * @param v value to set 
    */    
-  public void setPerformance(int addr, int v) {
-        if (featOkTst && casFeat_performance == null)
-      jcas.throwFeatMissing("performance", "type.Question");
-    ll_cas.ll_setRefValue(addr, casFeatCode_performance, v);}
+  public void setQuestion(int addr, int v) {
+        if (featOkTst && casFeat_question == null)
+      jcas.throwFeatMissing("question", "type.Question");
+    ll_cas.ll_setRefValue(addr, casFeatCode_question, v);}
     
   
 
@@ -157,16 +133,12 @@ public class Question_Type extends ComponentAnnotation_Type {
     casFeatCode_id  = (null == casFeat_id) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_id).getCode();
 
  
-    casFeat_sentence = jcas.getRequiredFeatureDE(casType, "sentence", "uima.cas.String", featOkTst);
-    casFeatCode_sentence  = (null == casFeat_sentence) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_sentence).getCode();
-
- 
     casFeat_passages = jcas.getRequiredFeatureDE(casType, "passages", "uima.cas.FSList", featOkTst);
     casFeatCode_passages  = (null == casFeat_passages) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_passages).getCode();
 
  
-    casFeat_performance = jcas.getRequiredFeatureDE(casType, "performance", "type.Performance", featOkTst);
-    casFeatCode_performance  = (null == casFeat_performance) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_performance).getCode();
+    casFeat_question = jcas.getRequiredFeatureDE(casType, "question", "type.Span", featOkTst);
+    casFeatCode_question  = (null == casFeat_question) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_question).getCode();
 
   }
 }
