@@ -2,30 +2,6 @@
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
   <primitive>false</primitive>  
-  <delegateAnalysisEngineSpecifiers>
-    <delegateAnalysisEngine key="TestElementAnnotator">
-      <import name="descriptors.annotators.TestElementAnnotator"/>
-    </delegateAnalysisEngine>
-    <delegateAnalysisEngine key="TokenizationAnnotator">
-      <import name="descriptors.annotators.TokenizationAnnotator"/>
-    </delegateAnalysisEngine>
-  <delegateAnalysisEngine key="ScoreAnnotator">
-      <import name="descriptors.annotators.ScoreAnnotator"/>
-    
-    </delegateAnalysisEngine>
-    <delegateAnalysisEngine key="PerformanceAnnotatorDescriptor">
-      <import name="descriptors.annotators.PerformanceAnnotatorDescriptor"/>
-    
-    </delegateAnalysisEngine>
-    <delegateAnalysisEngine key="outputAnnotator">
-      <import name="descriptors.annotators.outputAnnotator"/>
-    
-    </delegateAnalysisEngine>
-    <delegateAnalysisEngine key="NgramAnnotatorDescriptor">
-      <import name="descriptors.annotators.NgramAnnotatorDescriptor"/>
-    
-    </delegateAnalysisEngine>
-  </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>aaeDescriptor</name>
     <description>This is the descriptor for the pi5-kmaki Aggerate Analysis Engine.</description>
@@ -35,13 +11,7 @@
     <configurationParameterSettings/>
     <flowConstraints>
       <fixedFlow>
-        <node>TestElementAnnotator</node>
-        <node>TokenizationAnnotator</node>
-      <node>ScoreAnnotator</node>
-        <node>PerformanceAnnotatorDescriptor</node>
-        <node>outputAnnotator</node>
-        <node>NgramAnnotatorDescriptor</node>
-      </fixedFlow>
+        </fixedFlow>
     </flowConstraints>
     <typePriorities/>
     <fsIndexCollection/>
@@ -49,8 +19,7 @@
       <capability>
         <inputs/>
         <outputs>
-          <type allAnnotatorFeatures="true">type.Question</type>
-        </outputs>
+          </outputs>
         <languagesSupported/>
       </capability>
     </capabilities>

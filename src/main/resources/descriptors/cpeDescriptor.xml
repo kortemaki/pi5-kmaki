@@ -5,6 +5,14 @@
             <descriptor>
                 <import location="questionPassageReaderDescriptor.xml"/>
             </descriptor>
+            <configurationParameterSettings>
+        		<nameValuePair>
+        			<name>InputDir</name>
+        			<value>
+        				<string>/media/maki/OS/Users/Keith/Documents/CMU/Coursework/11791/PI5/pi5-kmaki/src/main/resources/inputData/</string>
+        			</value>
+            	</nameValuePair>
+            </configurationParameterSettings>
         </collectionIterator>
     </collectionReader>
     <casProcessors casPoolSize="3" processingUnitThreadCount="1">
@@ -24,7 +32,15 @@
         <descriptor>
             <import location="passageRankingWriterDescriptor.xml"/>
         </descriptor>
-            <deploymentParameters/>
+        <configurationParameterSettings>
+        	<nameValuePair>
+        		<name>OutputDir</name>
+        		<value>
+        			<string>/media/maki/OS/Users/Keith/Documents/CMU/Coursework/11791/PI5/pi5-kmaki/src/main/resources/outputData/</string>
+        		</value>
+            </nameValuePair>        
+        </configurationParameterSettings>
+        <deploymentParameters/>
         <errorHandling>
             <errorRateThreshold action="terminate" value="0/1000"/>
             <maxConsecutiveRestarts action="terminate" value="30"/>

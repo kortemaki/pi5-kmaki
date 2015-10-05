@@ -3,7 +3,7 @@
   <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
   <implementationName>PassageRankingWriter</implementationName>
   <processingResourceMetaData>
-    <name>passageRankingWriterDescriptor</name>
+    <name>PassageRankingWriter</name>
     <description/>
     <version>1.0</version>
     <vendor/>
