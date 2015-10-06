@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>false</primitive>  
+  <delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="analysisEngineDescriptor">
+      <import name=".media.maki.OS.Users.Keith.Documents.CMU.Coursework.11791.PI5.pi5-kmaki.target.classes.descriptors.aaeDescriptors.analysisEngineDescriptor"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="evaluationEngine">
+      <import name=".media.maki.OS.Users.Keith.Documents.CMU.Coursework.11791.PI5.pi5-kmaki.src.main.resources.descriptors.aaeDescriptors.evaluationEngine"/>
+    </delegateAnalysisEngine>
+  </delegateAnalysisEngineSpecifiers>
+  <analysisEngineMetaData>
+    <name>aaeDescriptor</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+    <configurationParameters/>
+    <configurationParameterSettings/>
+    <flowConstraints>
+      <fixedFlow>
+        <node>analysisEngineDescriptor</node>
+        <node>evaluationEngine</node>
+      </fixedFlow>
+    </flowConstraints>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs/>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+  <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>
