@@ -18,20 +18,12 @@
  */
 package annotators;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.StringTokenizer;
-
 import org.apache.uima.UimaContext;
 import org.apache.uima.analysis_component.CasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.CAS;
 import org.apache.uima.cas.CASException;
 import org.apache.uima.cas.FSIndex;
-import org.apache.uima.cas.Feature;
-import org.apache.uima.cas.Type;
-import org.apache.uima.cas.text.AnnotationFS;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.EmptyFSList;
 import org.apache.uima.jcas.cas.FSArray;
@@ -42,7 +34,6 @@ import org.apache.uima.resource.ResourceInitializationException;
 import type.Ngram;
 import type.NgramAnnotation;
 import type.NgramSet;
-import type.Passage;
 import type.Span;
 import type.TokenAnnotation;
 import type.TokenizedSpan;

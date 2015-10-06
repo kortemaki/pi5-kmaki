@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.uima.analysis_component.CasAnnotator_ImplBase;
-import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.CAS;
 import org.apache.uima.cas.CASException;
@@ -23,10 +22,12 @@ import type.ScoredSpan;
 import type.Scoring;
 import type.TestElementAnnotation;
 
-public class PerformanceAnnotator extends CasAnnotator_ImplBase  {
+public class PerformanceAnnotator extends CasAnnotator_ImplBase  
+{
 	
 	@SuppressWarnings({"unchecked", "rawtypes"})
-	public void process(CAS aCas) throws AnalysisEngineProcessException {
+	public void process(CAS aCas) throws AnalysisEngineProcessException 
+	{
 		System.out.println(">> Performance Annotator Processing");
 		
 		JCas jcas;
@@ -58,28 +59,36 @@ public class PerformanceAnnotator extends CasAnnotator_ImplBase  {
 		}		
 	}
 	
+	/**
+	 * Returns the reciprocal of the smallest rank which gives a correct score
+	 * If no scores are correct, returns the reciprocal of one plus the number of ranks.
+	 * 
+	 * @param scores - list of values true or false indicating whether the ranking was correct or not 
+	 * @return the reciprocal of the smallest correct rank, or one plus the number of ranks
+	 */
 	private static float reciprocalRank(List<Boolean> scores)
 	{
-		return 0;
-		/*int index = 0;
-		while(!scores.get(index) && index < scores.size())
+		int index = 1;
+		boolean sawCorrect = false;
+		for(Boolean score : scores)
 		{
-			System.out.print(scores.get(index) + " ");
+			sawCorrect |= score;
+			if(score)
+				break;
 			index++;
 		}
-		System.out.println("");
-		return ((float)1.0)/index;
-		*/
+		return sawCorrect ? ((float)1.0)/(index) : 0;
+	
 	}
 	
 	private static float averagePrecision(List<Boolean> scores)
 	{
 		float total = 0;
-		for(int n=0; n < scores.size(); n++)
+		for(int n=1; n <= scores.size(); n++)
 		{
 			total += precisionAtN(scores,n);
 		}
-		System.out.println(scores.size());
+		System.out.println(total + "/" + scores.size());
 		return ((float) total)/((float) scores.size());
 	}
 	
@@ -135,7 +144,8 @@ public class PerformanceAnnotator extends CasAnnotator_ImplBase  {
 	 * @param key: the list of comparable keys on which to sort
 	 * @param lists: the coindexed set of lists to sort
 	 */
-	public static <T extends Comparable<T>> void concurrentSort( final List<T> key, List<?>... lists){
+	public static <T extends Comparable<T>> void concurrentSort( final List<T> key, List<?>... lists)
+	{
         // Do validation
         if(key == null || lists == null)
         	throw new NullPointerException("key cannot be null.");
@@ -154,8 +164,10 @@ public class PerformanceAnnotator extends CasAnnotator_ImplBase  {
 			indices.add(i);
  
         // Sort the indices list based on the key
-		Collections.sort(indices, new Comparator<Integer>(){
-			public int compare(Integer i, Integer j) {
+		Collections.sort(indices, new Comparator<Integer>()
+		{
+			public int compare(Integer i, Integer j) 
+			{
 				return key.get(i).compareTo(key.get(j));
 			}
 		});
@@ -163,7 +175,8 @@ public class PerformanceAnnotator extends CasAnnotator_ImplBase  {
 		Map<Integer, Integer> swapMap = new HashMap<Integer, Integer>(indices.size());
  
         // create a mapping that allows sorting of the List by N swaps.
-		for(int i = 0; i < indices.size(); i++){
+		for(int i = 0; i < indices.size(); i++)
+		{
 			int k = indices.get(i);
 			while(swapMap.containsKey(k))
 				k = swapMap.get(k);

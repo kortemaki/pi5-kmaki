@@ -76,7 +76,8 @@ public class DebugCasConsumer extends CasConsumer_ImplBase {
    * 
    * @see org.apache.uima.collection.base_cpm.CasObjectProcessor#processCas(org.apache.uima.cas.CAS)
    */
-  public void processCas(CAS aCAS) throws ResourceProcessException {
+  @SuppressWarnings("rawtypes")
+public void processCas(CAS aCAS) throws ResourceProcessException {
     String modelFileName = null;
 
     JCas jcas;

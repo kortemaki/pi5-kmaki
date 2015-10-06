@@ -1,7 +1,5 @@
 import org.apache.uima.UIMAFramework;
-import org.apache.uima.analysis_engine.AnalysisEngine;
 import org.apache.uima.collection.CollectionProcessingEngine;
-import org.apache.uima.collection.CollectionReader;
 import org.apache.uima.collection.metadata.CpeDescription;
 import org.apache.uima.resource.ConfigurableResource;
 import org.apache.uima.util.XMLInputSource;

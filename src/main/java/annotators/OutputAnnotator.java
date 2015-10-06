@@ -19,40 +19,15 @@
 
 package annotators;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.StringTokenizer;
-import java.util.TreeMap;
-
 import org.apache.uima.analysis_component.CasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.CAS;
 import org.apache.uima.cas.CASException;
 import org.apache.uima.cas.FSIndex;
-import org.apache.uima.cas.Feature;
-import org.apache.uima.cas.Type;
-import org.apache.uima.cas.text.AnnotationFS;
 import org.apache.uima.jcas.JCas;
-import org.apache.uima.jcas.cas.EmptyFSList;
-import org.apache.uima.jcas.cas.FSArray;
-import org.apache.uima.jcas.cas.FSList;
-import org.apache.uima.jcas.cas.FloatArray;
-import org.apache.uima.jcas.cas.NonEmptyFSList;
-import org.apache.uima.jcas.tcas.Annotation;
-import org.apache.uima.resource.ResourceInitializationException;
-
 import type.OutputAnnotation;
-import type.Passage;
 import type.Performance;
 import type.Question;
-import type.ScoredSpan;
-import type.Scoring;
-import type.Span;
-import type.TestElementAnnotation;
-
 
 /**
  * A simple scoring annotator for PI3.
@@ -81,14 +56,13 @@ public class OutputAnnotator extends CasAnnotator_ImplBase {
 		for(Performance performance : performanceIndex)
 		{				
 	        Question question = performance.getTestElement().getQuestion();
-	          
-	        String text = String.format("%s,%.3f,%.3f,%.3f,%.3f\n",
+	        
+	        String text = String.format("%s,%.3f,%.3f,%.3f,%.3f",
 	                question.getId(), 
 	                performance.getPAt1(),
 	                performance.getPAt5(),
 	                performance.getRr(),
-	                performance.getAp());
-			
+	                performance.getAp());	        
 			
 			OutputAnnotation output = new OutputAnnotation(jcas);
 			output.setComponentId(this.getClass().getName());

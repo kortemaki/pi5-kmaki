@@ -1,8 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
-import java.io.Writer;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import org.apache.uima.cas.CAS;
@@ -14,8 +12,7 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.resource.ResourceInitializationException;
 import org.apache.uima.resource.ResourceProcessException;
 
-import type.Performance;
-import type.Question;
+import type.OutputAnnotation;
 
 /**
  * This CAS Consumer generates the report file with the method metrics
@@ -54,7 +51,8 @@ public class PassageRankingWriter extends CasConsumer_ImplBase {
     }
   }
   
-  public void processCas(CAS arg0) throws ResourceProcessException {
+  @SuppressWarnings("rawtypes")
+public void processCas(CAS arg0) throws ResourceProcessException {
   //Import the CAS as a JCAS
     JCas jcas = null;
     try {
@@ -62,22 +60,13 @@ public class PassageRankingWriter extends CasConsumer_ImplBase {
 
       // Retrieve all the questions for printout
       //TODO: Sort the question in ascending order according to their ID (???)
-      FSIterator it = jcas.getAnnotationIndex(Performance.type).iterator();
+      FSIterator it = jcas.getAnnotationIndex(OutputAnnotation.type).iterator();
       
       while (it.hasNext()) {
-        Performance performance = (Performance)it.next();
+        OutputAnnotation output = (OutputAnnotation)it.next();
         
-        Question question = performance.getTestElement().getQuestion();
+        writer.println(output.getOutput());
         
-        System.out.println("Processing performance output for question "+ question.getId());
-        
-        writer.printf("%s,%.3f,%.3f,%.3f,%.3f\n",
-                question.getId(), 
-                performance.getPAt1(),
-                performance.getPAt5(),
-                performance.getRr(),
-                performance.getAp());
-      
       }
       
     } catch (CASException e) {
