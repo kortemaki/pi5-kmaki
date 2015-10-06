@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <typeSystemDescription xmlns="http://uima.apache.org/resourceSpecifier">
     <name>typeSystemDescriptor</name>
-    <description>This typesystem only describes the input and output types of the CPE.
-You need to implement the types requried for your ranking model.</description>
+    <description>This typesystem describes the relevant classes necessary for the pi5-kmaki annotation and evaluation engine frameworks.</description>
     <version>1.0</version>
     <vendor/>
   <types>

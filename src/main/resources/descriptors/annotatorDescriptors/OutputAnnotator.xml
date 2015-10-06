@@ -4,7 +4,7 @@
   <primitive>true</primitive>  <annotatorImplementationName>annotators.OutputAnnotator</annotatorImplementationName>
   <analysisEngineMetaData>
     <name>outputAnnotator</name>
-    <description>Analysis engine which compiles the relevant annotations in the cas into an easy-to-consume output.</description>
+    <description>The Output analysis engine for pi5-kmaki.  Compiles the performance annotations in the cas into an easy-to-consume output.</description>
     <version>1.0</version>
     <vendor/>
     <configurationParameters/>

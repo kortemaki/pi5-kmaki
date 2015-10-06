@@ -4,7 +4,7 @@
   <implementationName>QuestionPassageReader</implementationName>
   <processingResourceMetaData>
     <name>questionPassageReaderDescriptor</name>
-    <description/>
+    <description>The collection reader for pi5-kmaki.  Loads questions and passages from a file and loads them into a cas for processing.</description>
     <version>1.0</version>
     <vendor/>
     <configurationParameters>

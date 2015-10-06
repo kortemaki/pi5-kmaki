@@ -21,7 +21,7 @@
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>aaeDescriptor</name>
-    <description>This is the descriptor for the pi5-kmaki Aggerate Analysis Engine.</description>
+    <description>This is the analysis aae descriptor for pi5-kmaki.  Follows the same analysis pipeline developed in pi4-kmaki, to annotate, tokenize, ngramize, and rank Passages according to Ngram overlap with their respective Question.</description>
     <version>1.0</version>
     <vendor/>
     <configurationParameters searchStrategy="language_fallback"/>

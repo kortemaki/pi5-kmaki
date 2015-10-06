@@ -12,7 +12,7 @@
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>evaluationEngine</name>
-    <description/>
+    <description>The evaluation aae for pi5-kmaki.  Annotates each test element with the performance attained by each ScoringAnnotation present in the CAS, then compiles the performance metrics into an easy-to-consume output format.</description>
     <version>1.0</version>
     <vendor/>
     <configurationParameters/>
@@ -23,6 +23,7 @@
         <node>OutputAnnotator</node>
       </fixedFlow>
     </flowConstraints>
+    <typePriorities/>
     <fsIndexCollection/>
     <capabilities>
       <capability>

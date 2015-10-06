@@ -4,7 +4,7 @@
   <primitive>true</primitive>  <annotatorImplementationName>annotators.ScoreAnnotator</annotatorImplementationName>
   <analysisEngineMetaData>
     <name>ScoreAnnotator</name>
-    <description/>
+    <description>The Scoring analysis engine for pi5-kmaki.  Evaluates the ngram overlap between each Passage and its Question, and annotates the Test Element with a ScoringAnnotation.</description>
     <version>1.0</version>
     <vendor/>
     <configurationParameters/>

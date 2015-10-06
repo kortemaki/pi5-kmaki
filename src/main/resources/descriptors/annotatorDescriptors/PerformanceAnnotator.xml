@@ -4,7 +4,7 @@
   <primitive>true</primitive>  <annotatorImplementationName>annotators.PerformanceAnnotator</annotatorImplementationName>
   <analysisEngineMetaData>
     <name>PerformanceAnnotator</name>
-    <description/>
+    <description>The Performance annotation engine for pi5-kmaki.  Annotates each Test Element with respect to the performance attained by the ScoringAnnotations present in the CAS.  Implements several metrics, including precision@1, precision@5, reciprocal rank, and average precision.</description>
     <version>1.0</version>
     <vendor/>
     <configurationParameters/>

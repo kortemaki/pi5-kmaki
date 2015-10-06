@@ -4,7 +4,7 @@
   <primitive>true</primitive>  <annotatorImplementationName>annotators.TestElementAnnotator</annotatorImplementationName>
   <analysisEngineMetaData>
     <name>TestElementAnnotator</name>
-    <description/>
+    <description>The Test Element annotation engine for pi5-kmaki.  Annotates a test element with its question and passages for further analysis.</description>
     <version>1.0</version>
     <vendor/>
     <configurationParameters/>

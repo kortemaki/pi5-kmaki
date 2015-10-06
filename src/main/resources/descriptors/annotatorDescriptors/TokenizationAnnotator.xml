@@ -4,7 +4,7 @@
   <primitive>true</primitive>  <annotatorImplementationName>annotators.TokenizationAnnotator</annotatorImplementationName>
   <analysisEngineMetaData>
     <name>TokenizationAnnotator</name>
-    <description/>
+    <description>The tokenization annotation engine for pi5-kmaki.  Annotates a span with whitespace delimited tokens.</description>
     <version>1.0</version>
     <vendor/>
     <configurationParameters/>

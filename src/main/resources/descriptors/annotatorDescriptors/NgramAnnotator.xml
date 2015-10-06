@@ -4,7 +4,7 @@
   <primitive>true</primitive>  <annotatorImplementationName>annotators.NgramAnnotator</annotatorImplementationName>
   <analysisEngineMetaData>
     <name>NgramAnnotator</name>
-    <description/>
+    <description>The Ngram annotation engine for pi5-kmaki.  Annotates a Tokenization with the ngrams formable among the tokens that constitute the tokenization.  Requires a parameter NgramSize to configure the ngram size.</description>
     <version>1.0</version>
     <vendor/>
     <configurationParameters>

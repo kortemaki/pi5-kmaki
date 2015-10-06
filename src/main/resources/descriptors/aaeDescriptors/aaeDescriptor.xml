@@ -12,7 +12,7 @@
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
     <name>aaeDescriptor</name>
-    <description/>
+    <description>The Aggregate Analysis Engine for pi5-kmaki.  Chains the analysis and evaluation aaes in sequence in order to evaluate the analysis system.</description>
     <version>1.0</version>
     <vendor/>
     <configurationParameters/>
