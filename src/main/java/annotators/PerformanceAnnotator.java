@@ -28,8 +28,6 @@ public class PerformanceAnnotator extends CasAnnotator_ImplBase
 	@SuppressWarnings({"unchecked", "rawtypes"})
 	public void process(CAS aCas) throws AnalysisEngineProcessException 
 	{
-		System.out.println(">> Performance Annotator Processing");
-		
 		JCas jcas;
 		try {
 			jcas = aCas.getJCas();
@@ -88,7 +86,6 @@ public class PerformanceAnnotator extends CasAnnotator_ImplBase
 		{
 			total += precisionAtN(scores,n);
 		}
-		System.out.println(total + "/" + scores.size());
 		return ((float) total)/((float) scores.size());
 	}
 	
